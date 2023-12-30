@@ -129,7 +129,7 @@ ArraySlice slicer = ArraySlice::new([.., ])
 	- [ ] ArraySlices use a numpy-like syntax for indexing
 	- [ ] Views wrap a standard rust slice (`&[T]`) of an array
 - [ ] GPU support (this is most important!!!)
-	- [ ] Headless OpenGL context with `glfw` Rust bindings
+	- [ ] Headless OpenGL context with `glfw` Rust bindings (see <https://crates.io/crates/gl-headless> for reference)
 	- [ ] GPU computation
 - [ ] API completion
 - [x] For select operations, implement alternative methods that create a new NdArray with the `_copy` suffix e.g. `matmul_copy()`
