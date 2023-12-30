@@ -56,6 +56,15 @@ nav {
 		margin-bottom: 2rem;
 		@include md { margin-bottom: 0; }
 		color: $tx-primary-color-dark;
+
+		a {
+			color: $tx-primary-color-dark;
+			text-decoration: none;
+		}
+
+		a:hover, a:focus {
+			text-decoration: underline;
+		}
 	}
 
 	.active {
@@ -83,9 +92,10 @@ nav {
 
 main {
 	display: block;
-	margin-top: $common-top-padding;
 	@include md { margin-top: 0; }
 	flex-grow: 1;
+	padding-top: $common-top-padding;
+		padding-bottom: $common-top-padding;
 	padding-right: 4rem;
 	@include md { padding: 2rem 0.5rem; }
 	justify-content: flex-start;
@@ -213,6 +223,12 @@ article {
 	
 	  .return-link {
 	    margin-top: 1.2rem;
+	  }
+
+	  blockquote {
+	  		margin: 0;
+			padding-left: 1rem;
+			border-left: 3px solid rgba(255, 255, 255, 0.3);
 	  }
 	
 	  table {
