@@ -50,7 +50,7 @@ Tips for fast GPU rendering:
 
 - Only render on user input/interaction, otherwise don't re-render frames (no immediate-mode UI that re-renders every frame)
 - Only re-render changed areas ("damage tracking")
-	- Save last render to a texture in memory and load that texture on next frame, cropping out the region that was changed
+	- This requires caching the last render to a texture in memory and loading that texture on next frame, cropping out the region that was changed
 - Must render on GPU
 - For repeated elements (e.g. long lists or tree views) caching is necessary
 
