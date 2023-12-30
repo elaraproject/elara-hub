@@ -205,7 +205,7 @@ article {
 	  // Note that if this does not work,
 	  // there is a JavaScript polyfill
 	  // that runs instead
-	  @supports selector(:has(*)) {
+	  li:has(input[type="checkbox"]) {
 	  	margin-left: 0;
 	  	list-style-type: none;
 	  }
