@@ -28,7 +28,11 @@ cd elara-hub
 
 Within that folder, run `zola serve`. You should see a local web address pop up - open that address in your browser, the site gives you a live preview as you edit. Then simply open the desired files in the `content/` folder, and begin editing!
 
+Elara Hub is written in a plaintext format called markdown. If you're not familiar with it, that's okay! Just see the [[markdown guide]](@/markdown-guide.md).
+
 When adding new files, make sure to add internal links to that new file to at least one other markdown file. This ensures navigability! Internal links follow the format `[[File name]](@/path-to-file.md)`, with the extra bracket differentiating them from web links.
+
+Important to note: do not run a production build with `zola build`, always use `zola serve` when editing/viewing files locally for live preview. The production build appends the GitHub pages base url, meaning it does not work offline anymore.
 
 The site is easiest to edit with a code editor that has a command palette-style fuzzy-matching filepicker or [fzf](https://github.com/junegunn/fzf) support.
 

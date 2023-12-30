@@ -6,6 +6,7 @@ Elara Hub is meant to be a new open-source home of project elara. It uses a git 
 
 Elara Hub supports an extended markdown syntax adapted for technical writing and project management. It includes:
 
+- CSV headers
 - Table of contents
 - Basic text formatting
 - Lists
@@ -19,6 +20,11 @@ Elara Hub supports an extended markdown syntax adapted for technical writing and
 - Internal linking
 - Diagrams with mermaid.js (which includes Gantt charts)
 - Plots with charter
+- Admonitions and notes (like MyST markdown)
+- Icons
+- Video/audio
+- Figures and captions
+- Automatic conversion of common characters (e.g. (c), --) to their respective unicode symbols
 
 Future additions:
 
