@@ -6,6 +6,7 @@ title = "Project Elara library plans"
 
 - Implement [custom error types](https://learning-rust.github.io/docs/custom-error-types/) (this is already being implemented in `elara-gfx` pretty well) following <https://mmapped.blog/posts/12-rust-error-handling.html> - the correct approach is **small enums** of error categories rather than one humongous global error enum
 - Move to [Codeberg](https://codeberg.org/) for hosting in the future and keep github as mirrors
+- All libraries that currently depend on `elara-log` should be able to make `elara-log` an optional dependency behind the `logging` feature flag. If disabled, they will simply use `println!` instead.
 
 ## elara-astro
 
@@ -103,17 +104,124 @@ Rust reimplementation of <https://github.com/tauzero7/GeodesicViewer>
 
 ## elara-DE
 
-(note: awaiting better name)
+Make automated ODE and PDE solver. It should have the following features:
 
-Make a specialized elara tool to plot slope fields for ODEs, and numerically solve (systems of or singular) ODEs/PDEs without needing any code (like a desmos for differential equations). So the user can just enter a differential equation symbolically and the initial/boundary conditions, and then it'll be solved automatically. Has both a PINN (neural-network based) solver and a conventional grid-based solver.
+- Handle either single DE or system of DEs of any order
+- Support multivariable or single-variable scalar, vector, or tensor-valued function (or field) to solve for, as well as real or complex arguments
+- Enter in ODE or PDE as with as boundary/initial conditions symbolically (with SymPy-like syntax)
+- (Optional) compare solution to manually-inputted analytical solution
+- GPU acceleration for fast solving
+- Slope fields for first-order ODEs
+- Built-in visualization tools for solutions (defaults to lines for single-variable functions, heatmaps for two-variable (3D) functions, and density plots for three-variable (4D) functions, with the colors automatically scaled based on max intensity and the opacity of each pixel scaled based on the inputted grid density)
+- Has both a PINN (neural-network based) solver and a conventional grid-based solver.
 
 ## elara-cas
 
 (note: awaiting better name)
 
+elara-cas is a Qalculate replacement, with LaTeX printing output, a syntax-highlighted REPL, and an optional visual editor for inserting complicating expressions. 
+
 Elara CAS will use integral/diff eq solver from <https://arxiv.org/abs/1912.01412>
 
 UI inspired by <https://github.com/bornova/numara-calculator>
+
+This should be the syntax:
+
+```rust
+// Basic calculations (these are done symbolically)
+1 + 1
+
+// Declaring variables
+var x, y, z
+
+// Declaring constants
+const G, M := 2e30, m := 1, c := 3e8
+
+// Declaring expressions
+// note the UI includes an optional MathQuill-style visual editor
+// to insert expressions (which it then outputs with the CAS
+// language) for convenience
+schwarzschild = (2 * G * M) / c^2
+
+// Declaring functions
+// Note the same MathQuill-style visual editor is available
+u(x) // function prototype (useful for differential equations)
+g(x) = 3 * x // scalar-valued single variable
+f(x, y, z) = 3 * x^2 + 5 * y + z // scalar-valued multivariable
+h(x, y) = (5 * x + 4, 7 * x + 8) // vector-valued
+
+// Plot a function
+// in the UI you can choose the domain and range
+// with sliders and pan/zoom on the graph
+plot f
+
+// Evaluating functions
+// in the UI you can choose between a numerical answer (e.g. 5.114342)
+// or a symbolic answer (e.g. sqrt(2) / 2)
+// for numerical answers, any constants will be evaluated with their
+// assigned numerical values
+f(1, 4, 3)
+
+// Taking derivatives without explicit evaluation
+dudx = diff u // here x doesn't need to be specified as it is the only variable
+
+// Taking derivatives
+dfdx = diff f, x
+dfdx(2, 6, 1)
+
+// Taking the gradient
+grad_f = grad f
+grad_f(2, 6, 1)
+
+// Taking the indefinite integral symbolicallly
+// This uses a neural network solver under the hood
+int_f = integrate f, x
+// you can then evaluate the definite integral with
+int_f(6) - int_f(1)
+
+// Taking the definite integral symbolically
+integrate f, x, 1, 6
+
+// Taking the definite integral
+// When doing so, the answer is computed
+// exclusively numerically
+quadrature f, x, 0, 5
+
+// Create equation
+myeq = eq 5 * x^2 + 8 * x, 78 * x + 5
+
+// Solve equation
+// in UI there is the option to solve
+// symbolically or numerically
+solve myeq, x
+
+// You can also use this as a lazy
+// expression rearranger
+sch_radius_eq = eq r_s, schwarzschild
+solve sch_radius_eq, M // rearrange to get mass in terms of r_s
+
+// Substitution
+subs myeq, x, 5 * y
+
+// Using ans
+5 * x^2 + 7 * sin(x)
+mynewexpr = ans
+
+// Note substitution is always symbolic
+// If you want to evaluate an expression
+// (not a function) then use eval
+// In eval you don't need to sub in the
+// value of any constants, just the variables
+eval 2 * M * x^2 + 3 * t, { x = 6, t = 0.1 }
+
+// Solving ordinary differential equations
+// This uses a neural network solver under the hood
+mydiffeq = eq dudx, 3 * u * x
+dsolve eq // symbolic solver (for both ODE and PDE)
+ndsolve eq // numerical solver
+```
+
+The very minimalist syntax only works because you cannot nest built-in functions like `diff` and `integrate` within other functions, and those functions are delimitated by the end of the line.
 
 ## elara-ml
 
@@ -196,6 +304,10 @@ fn main() {
 	ctx.draw(...);
 }
 ```
+
+Elara GFX should eventually be zero-dependency (other than `elara-log`, but even that should be an optional feature flag), like `space-shooter.c`/`tigr`. This is a _very_ long-term thing.
+
+To implement this, I can make a simplified port of `tigr` to C with just the OpenGL parts, and then port it to Rust for a zero-dependency GL/platforming library. This is in line with the long-term goal of making the entire Elara Project zero-dependency.
 
 ## elara-array
 

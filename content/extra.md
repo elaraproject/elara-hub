@@ -22,3 +22,5 @@ Elara UI/UX guidelines: high accessibility, visual comfort, and clarity are the 
 Project Elara research papers should use literate programming to ensure reproducible research, like org-mode. They should be written in a specialized markdown syntax with support for executable code blocks (like MyST markdown), which is then compiled to LaTeX and HTML (with the Elara academic theme). Design the Elara academic theme in Figma.
 
 Maybe eventually add a command palette/fileswitcher to Elara Hub, and add a Obsidian-style graph view like [this](https://github.com/blinpete/wiki-graph).
+
+Implement responsivity to `elara-ui` by setting breakpoint functions in Component trait.

@@ -34,6 +34,7 @@ These are more in-depth pages about specific aspects of the project. Many of the
 - [[Project development stages]](@/stages.md)
 - [[Relativity Hub]](@/relativity-hub.md)
 - [[Focusing chamber theoretical analysis 1 (archive)]](@/focusing-chamber-1/index.md)
+- [[Outreach plan]](@/outreach-plan.md)
 
 ## Project standards reference
 
@@ -46,6 +47,8 @@ These are common standards used within the project.
 These are guides to specific areas of knowledge important to the project
 
 - [[All about partial differential equations]](@/all-about-pdes.md)
+- [[Multivariable calculus guide]](@/multivar.md)
+- [[Integration techniques]](@/integration-techniques.md)
 
 ## Idea sketching
 
