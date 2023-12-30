@@ -7,12 +7,15 @@ $border-dark: #404040;
 $link-color: #38BDF8;
 
 $common-top-padding: 3rem;
+$border: 1px solid $border-dark;
 
 body {
 	font-family: "Open Sans", "Inter", sans-serif;
 	background-color: $bg-color-dark;
 	display: flex;
 	flex-direction: row;
+	@include md { flex-direction: column; }
+	@include sm { flex-direction: column; }
 	padding: 0 1rem;
 	margin: 0;
 	height: 100vh;
@@ -20,31 +23,48 @@ body {
 
 nav {
 	display: block;
+	@include md { 
+		display: flex;
+		flex-direction: row;
+		column-gap: 2rem; 
+	}
 	flex: 0 0 15%; // cannot grow, can shrink
+	@include md { flex: none; }
 	overflow-y: scroll;
 	margin-right: 4rem;
-	padding-left: 1.5rem;
-	padding-right: 2rem;
-	padding-top: $common-top-padding;
-	padding-bottom: 0;
-	border-right: 1px solid $border-dark;
-	@include sm { display: none; }
+	@include md { margin: 0; }
+	padding: $common-top-padding 2rem 0 1.5rem;
+	@include md { padding: 1.5rem 0 1.5rem 0; }
+	border-right: $border;
+	@include md {
+		border-right: none;
+		border-bottom: $border;
+	}
+
+	.mobile-only {
+		display: none;
+		@include md { display: block; }
+	}
 
 	a {
 		text-decoration: none;
 	}
 
-	h1 {
+	.header {
 		font-size: 0.875rem;
 		margin-top: 0;
 		margin-bottom: 2rem;
+		@include md { margin-bottom: 0; }
+		color: $tx-primary-color-dark;
+	}
 
-		a {
-			color: $tx-primary-color-dark;
-		}
+	.active {
+		font-weight: bold;
 	}
 
 	ul {
+		display: block;
+		@include md { display: none; }
 		flex-wrap: wrap;
 		list-style: none;
 		padding: 0;
@@ -64,14 +84,16 @@ nav {
 main {
 	display: block;
 	margin-top: $common-top-padding;
+	@include md { margin-top: 0; }
 	flex-grow: 1;
 	padding-right: 4rem;
+	@include md { padding: 2rem 0.5rem; }
 	justify-content: flex-start;
 	overflow-y: scroll;
 }
 
 article {
-	width: 80ch; // for optimal readability
+	max-width: 80ch; // for optimal readability
 	color: $tx-primary-color-dark;
 
 	.tasklist {

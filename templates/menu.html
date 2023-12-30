@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<p>You are currently on the menu page.</p>
+	{% set index = get_section(path="_index.md") %}
+	<ul>
+  	{% for page in index.pages %}
+	  	<li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+  	{% endfor %}
+  	</ul>
+{% endblock content %}
