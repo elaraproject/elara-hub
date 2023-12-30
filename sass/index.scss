@@ -16,7 +16,7 @@ body {
 	flex-direction: row;
 	@include md { flex-direction: column; }
 	@include sm { flex-direction: column; }
-	padding: 0 1rem;
+	padding: 0 0 0 1rem;
 	margin: 0;
 	height: 100vh;
 }
@@ -33,8 +33,8 @@ nav {
 	overflow-y: scroll;
 	margin-right: 4rem;
 	@include md { margin: 0; }
-	padding: $common-top-padding 2rem 0 1.5rem;
-	@include md { padding: 1.5rem 0 1.5rem 0; }
+	padding: $common-top-padding 2rem $common-top-padding 1.5rem;
+	@include md { padding: 1.5rem 0; }
 	border-right: $border;
 	@include md {
 		border-right: none;
@@ -185,7 +185,7 @@ article {
 	  	font-size: 0.875rem;
 	  }
 	  
-	  p, li {
+	  th, td, p, li {
 	    font-size: 0.875rem;
 	    line-height: 1.7;
 	  }
