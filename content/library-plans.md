@@ -35,7 +35,7 @@ Ideal presentation tool for project elara - takahashi method, write slides in ma
 - Make a previewer/slide shower based on <https://en.wikipedia.org/wiki/Takahashi_method> like `sent` from the suckless project
 - Make a basic demo terminal based on <https://github.com/dhanoosu/TkTerm>
 
-Follow tips from <https://2d.graphics/book/>
+Follow tips from <https://2d.graphics/>
 
 Tips for fast GPU rendering:
 
