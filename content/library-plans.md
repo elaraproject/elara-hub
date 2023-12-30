@@ -150,10 +150,11 @@ Implement several libraries on top of elara-gfx:
 <https://zed.dev/blog/videogame>
 
 
-`elara-gfx` should have two main APIs:
+`elara-gfx` should have three main APIs:
 
 - `GfxRenderer`, which is common graphics rendering layer like SDL (just with the ability to render both on the CPU and the GPU)
 - `GPUCompute`, which is an OpenGL wrapper for GPU computations (like CUDA)
+- `Platform`, a very low-level API to do things like window creation, event listening, etc.
 
 Crucially `elara-gfx` **should not** implement any math functions. That is what `elara-math` and `elara-array` does.
 
