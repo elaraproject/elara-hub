@@ -35,6 +35,7 @@ These are more in-depth pages about specific aspects of the project. Many of the
 - [[Relativity Hub]](@/relativity-hub.md)
 - [[Focusing chamber theoretical analysis 1 (archive)]](@/focusing-chamber-1/index.md)
 - [[Outreach plan]](@/outreach-plan.md)
+- [[Alternative method of solving differential equations]](@/alt-de-solver.md)
 
 ## Project standards reference
 
@@ -61,5 +62,6 @@ These are ideas of various project members that may (or may not) be incorporated
 
 Miscellaneous pages are linked here.
 
+- [[Meta (content about Elara Hub itself)]](@/meta.md)
 - [[Extra content storage]](@/extra.md)
 - [[Jokes & fun page]](@/funny.md)
