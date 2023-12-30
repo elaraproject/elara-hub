@@ -1,0 +1,213 @@
+@import "screens";
+
+$bg-color-dark: #252525;
+$tx-primary-color-dark: #F8F8F8;
+$tx-secondary-color-dark: #AAA;
+$border-dark: #404040;
+$link-color: #38BDF8;
+
+$common-top-padding: 3rem;
+
+body {
+	font-family: "Open Sans", "Inter", sans-serif;
+	background-color: $bg-color-dark;
+	display: flex;
+	flex-direction: row;
+	padding: 0 1rem;
+	margin: 0;
+	height: 100vh;
+}
+
+nav {
+	display: block;
+	flex: 0 0 15%; // cannot grow, can shrink
+	overflow-y: scroll;
+	margin-right: 4rem;
+	padding-left: 1.5rem;
+	padding-right: 2rem;
+	padding-top: $common-top-padding;
+	padding-bottom: 0;
+	border-right: 1px solid $border-dark;
+	@include sm { display: none; }
+
+	a {
+		text-decoration: none;
+	}
+
+	h1 {
+		font-size: 0.875rem;
+		margin-top: 0;
+		margin-bottom: 2rem;
+
+		a {
+			color: $tx-primary-color-dark;
+		}
+	}
+
+	ul {
+		flex-wrap: wrap;
+		list-style: none;
+		padding: 0;
+
+		li {
+			margin-bottom: 0.6rem;
+		}
+		
+		a {
+			font-size: 0.875rem;
+			color: $tx-secondary-color-dark;
+			line-height: 1.5;
+		} 
+	}
+}
+
+main {
+	display: block;
+	margin-top: $common-top-padding;
+	flex-grow: 1;
+	padding-right: 4rem;
+	justify-content: flex-start;
+	overflow-y: scroll;
+}
+
+article {
+	width: 80ch; // for optimal readability
+	color: $tx-primary-color-dark;
+
+	.tasklist {
+		margin-left: 0;
+		list-style-type: none;
+	}
+	
+	
+	  // Credits to new.css
+	  address,
+	  area,
+	  aside,
+	  audio,
+	  blockquote,
+	  datalist,
+	  details,
+	  dl,
+	  fieldset,
+	  figure,
+	  form,
+	  input,
+	  iframe,
+	  img,
+	  meter,
+	  nav,
+	  ol,
+	  optgroup,
+	  option,
+	  output,
+	  p,
+	  pre,
+	  progress,
+	  ruby,
+	  section,
+	  table,
+	  textarea,
+	  ul,
+	  video {
+	  	margin-bottom: 0.5rem;
+	  }
+	
+	  img {
+	    display: block;
+	    width: 50%;
+	    @include lg { width: 70%; }
+	    @include sm { width: 100%; }
+	    margin: auto;
+	  }
+	
+	  h2, h3, h4, h5 {
+	      margin: 1.5rem 0;
+	      line-height: 1.2;
+	  }
+
+	  // There is only one h1 per
+	  // page, used for the title
+	  h1 {
+	  	font-size: 1.5rem;
+	  	margin: 0 0 1.5rem 0; // only bottom margin for alignment
+	  }
+
+	  h2 {
+	  	font-size: 1.2rem;
+	  }
+
+	  h3 {
+	  	font-size: 1.15rem;
+	  }
+
+	  h4 {
+	  	font-size: 1.05rem;
+	  }
+
+	  h5 {
+	  	font-size: 0.9rem;
+	  }
+
+	  h6 {
+	  	font-size: 0.875rem;
+	  }
+	  
+	  p, li {
+	    font-size: 0.875rem;
+	    line-height: 1.7;
+	  }
+
+	  a {
+	  	color: $link-color;
+	  }
+
+	  ul {
+	  	padding-left: 0.5rem;
+	  }
+
+	  li {
+	  	margin-left: 0.5rem;
+	  }
+
+	  // Note that if this does not work,
+	  // there is a JavaScript polyfill
+	  // that runs instead
+	  @supports selector(li:has(input)) {
+	  	margin-left: 0;
+	  	list-style-type: none;
+	  }
+	
+	  pre {
+	    padding: 1rem 1.5rem;
+	    border-radius: 0.25rem;
+	  }
+	
+	  pre code {
+	    display: block;
+	    width: 100%;
+	    overflow-x: auto;
+	  }
+	
+	  .return-link {
+	    margin-top: 1.2rem;
+	  }
+	
+	  table {
+	  		border-collapse: collapse;
+	  	}
+	  
+	  	table caption {
+	  		font-weight: bold;
+	  		margin-bottom: 0.5rem;
+	  	}
+	  
+	  	td, th {
+	  		text-align: left;
+	  		padding: 0.5rem;
+	  	}
+	  
+	  	tr {
+	  		border-bottom: 1px solid $border-dark;
+	  	}
+}

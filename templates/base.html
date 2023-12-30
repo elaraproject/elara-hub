@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elara Hub</title>
+    {% block css %}
+    <link rel="stylesheet" href="{{ get_url(path="index.css", trailing_slash=false) | safe }}">
+    <!--KaTeX-->
+    <link rel="stylesheet" href="{{ get_url(path="katex/katex.min.css", trailing_slash=false) | safe }}">
+    {% endblock css %}
+</head>
+<body>
+    <nav>
+    	<h1><a href="/">Elara Hub</a></h1>
+    	<ul>
+    	 {% set index = get_section(path="_index.md") %}
+    	 {% for page in index.pages %}
+    	 	<li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+    	 {% endfor %}
+    	</ul>
+    </nav>
+
+    <main>
+    	<article>
+	    {% block content %} {% endblock %}
+	    </article>
+    </main>
+
+    <script>
+    // Necessary until pulldown-cmark (which Zola depends on)
+    // auto-appends a .tasklist class to all list items
+    // that contain task lists
+    document.querySelectorAll("input[type='checkbox']").forEach((el) => el.parentElement.classList.add("tasklist"));
+    </script>
+
+    <script defer src="{{ get_url(path='katex/katex.min.js', trailing_slash=false) | safe }}"></script>
+    <script defer src="{{ get_url(path='katex/contrib/auto-render.min.js', trailing_slash=false) | safe }}"></script>
+
+    <script>
+    	// Loading KaTeX
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+              // customised options
+              // • auto-render specific keys, e.g.:
+              delimiters: [
+                  {left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  {left: '\\(', right: '\\)', display: false},
+                  {left: '\\[', right: '\\]', display: true}
+              ],
+              // • rendering keys, e.g.:
+              throwOnError : false
+            });
+        });
+    </script>
+</body>
+</html>
