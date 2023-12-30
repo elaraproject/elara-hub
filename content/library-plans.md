@@ -30,6 +30,14 @@ Ideal presentation tool for project elara - takahashi method, write slides in ma
 
 ## elara-ui
 
+Elara UI offers three different APIs:
+
+- The widget API provides ready-to-use, styled widgets following Elara design conventions. However, widgets are not customizable
+- The component API provides basic building blocks of UIs that can then be joined together. They are flexible while not being overly verbose.
+- The draw API allows painting custom widgets. It is the lowest-level API.
+
+Testing demo apps:
+
 - Make an analogue of <https://sindresorhus.com/plain-text-editor>
 - Make a gui version of <https://pypi.org/project/share-file-qr/>
 - Make a previewer/slide shower based on <https://en.wikipedia.org/wiki/Takahashi_method> like `sent` from the suckless project
@@ -136,14 +144,63 @@ Look at https://lodev.org/lodepng/ and port the 500-line `picoPNG` into a Rust v
 
 Implement several libraries on top of elara-gfx:
 
-- elara-draw: Fabric.js-like library on top of elara-gfx, see <http://fabricjs.com/fabric-intro-part-1>
-- elara-ui: UI library on top of elara-gfx
+- `elara-vg`: Fabric.js/Paper.js-like vector graphics library on top of elara-gfx, see <http://fabricjs.com/fabric-intro-part-1>, basically it implements the vector graphics parsing and processing and vector graphics operations, but it leaves all the rendering to `elara-gfx`, which allows it to render to any platform `elara-gfx` supports (basically all the platforms)
+- `elara-ui`: minimal UI library on top of elara-gfx used for all the Elara apps, again thanks to the library it supports all the platforms `elara-gfx` supports
 
 <https://zed.dev/blog/videogame>
+
+
+`elara-gfx` should have two main APIs:
+
+- `GfxRenderer`, which is common graphics rendering layer like SDL (just with the ability to render both on the CPU and the GPU)
+- `GPUCompute`, which is an OpenGL wrapper for GPU computations (like CUDA)
+
+Crucially `elara-gfx` **should not** implement any math functions. That is what `elara-math` and `elara-array` does.
+
+The `GfxRenderer` layer is able to draw basically anything graphics-related: 
+
+- Lines
+- Primitives
+	- Rectangles
+	- Circles
+	- Triangles
+- Text
+- Images
+- Any 2D curve given a set of vertices
+- Any 2D shape given a set of vertices (which means e.g. if you want to draw a bezier curve, you need to write your algorithm to convert it to an array of vertices)
+- (Future) any 3D object given a set of vertices using shaders (the shaders are Rust closures that take in a 32-bit vertex data and fragment data array as input and output another 32-bit raster array)
+
+This means that to use `elara-gfx` is as simple as declaring:
+
+```rust
+use elara_gfx::{GfxRenderer, RenderBackend};
+
+fn main() {
+	// use the cross-platform CPU backend
+	// the backend is kind of like https://zserge.com/posts/fenster/
+	let ctx = GfxRenderer::create_ctx(RenderBackend::CPU);
+	ctx.draw(...);
+
+	// use the cross-platform OpenGL backend
+	let ctx = GfxRenderer::create_ctx(RenderBackend::OpenGL);
+	ctx.draw(...);
+
+	// use the Apple-only Metal backend
+	let ctx = GfxRenderer::create_ctx(RenderBackend::Metal);
+	ctx.draw(...);
+
+	// use the cross-platform Image backend
+	// this is most suitable to rendering to an image like a PNG
+	let ctx = GfxRenderer::create_ctx(RenderBackend::Image);
+	ctx.draw(...);
+}
+```
 
 ## elara-array
 
 More details in [[Elara-array API plan]](@/elara-array-api-plan.md)
+
+`elara-array` should include its GPU backend as an optional feature. This speeds up compile times - because if it doesn't use the GPU backend, it has basically zero dependencies.
 
 Implement the following:
 
