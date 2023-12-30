@@ -23,12 +23,12 @@ Given the established 6-month goals, the following tasks must be completed. Note
 
 - [x] Complete paper 2
 - [x] Create the 6-month roadmaps
-- [ ] Clean up project and reorganize
-	- [ ] Create Elara Hub - dedicated project management and knowledge base website, see [[New Elara Hub plan]](@/elara-hub-creation.md)
+- [x] Clean up project and reorganize
+	- [x] Create Elara Hub - dedicated project management and knowledge base website, see [[New Elara Hub plan]](@/elara-hub-creation.md)
 		- [x] Design
-		- [ ] Code with zola (include KaTeX support, Mermaid flow charts, sequence diagrams, and gantt diagrams, as well as [charter](https://github.com/Mandarancio/scidown) graphs)
-		- [ ] Publish
-	- [ ] Organize project knowledge base on Elara Hub
+		- [x] Code with zola (include KaTeX support, Mermaid flow charts, sequence diagrams, and gantt diagrams, as well as [charter](https://github.com/Mandarancio/scidown) graphs)
+		- [x] Publish
+	- [x] Organize project knowledge base on Elara Hub
 - [ ] Complete microwave transmitter design
 	- [ ] Sketch out design
 	- [ ] Analyze design analytically or through numerical simulation
