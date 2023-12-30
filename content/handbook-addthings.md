@@ -2,6 +2,10 @@
 title = "Things to add to Elara Handbook"
 +++
 
+## General
+
+For the first page, change "learn, develop, or contribute to Project Elara" to "learn to develop or contribute to Project Elara", that wording would be clearer.
+
 ## For knowledge library
 
 $W = \Delta K = -\Delta U$
