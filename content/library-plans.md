@@ -4,8 +4,8 @@ title = "Project Elara library plans"
 
 ## All libraries
 
-- Implement [custom error types](https://learning-rust.github.io/docs/custom-error-types/) (this is already being implemented in `elara-gfx` pretty well) following https://mmapped.blog/posts/12-rust-error-handling.html - the correct approach is **small enums** of error categories rather than one humongous global error enum
-- Move to https://codeberg.org/ for hosting in the future and keep github as mirrors
+- Implement [custom error types](https://learning-rust.github.io/docs/custom-error-types/) (this is already being implemented in `elara-gfx` pretty well) following <https://mmapped.blog/posts/12-rust-error-handling.html> - the correct approach is **small enums** of error categories rather than one humongous global error enum
+- Move to [Codeberg](https://codeberg.org/) for hosting in the future and keep github as mirrors
 
 ## elara-astro
 
@@ -73,7 +73,7 @@ Autodiff implementations to look at:
 - <https://github.com/conradludgate/autograd-rs/tree/main>
 - (Nearly 1-1 reimplementation of Jax in Rust) <https://getcode.substack.com/p/beyond-backpropagation-higher-order>
 
-In the future elara-math should have a second functional API like Jax's that will be the primary API. This functional API has a `elara_math::grad()`function that transforms one function into a corresponding function for its derivative. Base this on how https://github.com/HIPS/autograd implements it. This is bc the current PyTorch-inspired API is basically only good for neural networks and wastes computational time creating graphs. One similar rust implementation to reference is https://github.com/ibab/rust-ad/blob/master/src/lib.rs.
+In the future elara-math should have a second functional API like Jax's that will be the primary API. This functional API has a `elara_math::grad()`function that transforms one function into a corresponding function for its derivative. Base this on how https://github.com/HIPS/autograd implements it. This is bc the current PyTorch-inspired API is basically only good for neural networks and wastes computational time creating graphs. One similar rust implementation to reference is <https://github.com/ibab/rust-ad/blob/master/src/lib.rs>.
 
 Implement sparse matrices: <https://crates.io/crates/sprs>
 

@@ -72,6 +72,7 @@ We take the derivative again to get a second-order differential equation that do
 $$
 \frac{d^2 r}{d\phi^2} = \frac{1}{2} r_s - r
 $$
+
 ---
 
 For debugging, we want to use the standard Newtonian $a = -\frac{GM}{r^2}$ equation to test.

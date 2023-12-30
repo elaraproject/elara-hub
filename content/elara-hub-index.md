@@ -25,10 +25,15 @@ The project is planned broadly with 6-month roadmaps which dictate the prioritie
 
 ## Project directory
 
-These are more in-depth notes about specific aspects of the project.
+These are more in-depth pages about specific aspects of the project. Many of these pages are also hubs that cover one topic section and link to more detailed pages in that section.
 
+- [[Project Philosophy]](@/project-philosophy.md)
 - [[Project Elara libraries plan]](@/library-plans.md)
 - [[Visualization-based outreach]](@/visualization-outreach.md)
+- [[Things to add to Elara Handbook]](@/handbook-addthings.md)
+- [[Project development stages]](@/stages.md)
+- [[Relativity Hub]](@/relativity-hub.md)
+- [[Focusing chamber theoretical analysis 1 (archive)]](@/focusing-chamber-1/index.md)
 
 ## Project standards reference
 
@@ -36,8 +41,22 @@ These are common standards used within the project.
 
 - [[Standardized calculus notation]](@/standard-notation.md)
 
+## Knowledge base
+
+These are guides to specific areas of knowledge important to the project
+
+- [[All about partial differential equations]](@/all-about-pdes.md)
+
+## Idea sketching
+
+These are ideas of various project members that may (or may not) be incorporated into the project.
+
+- [[Hydrogen from CO2 production]](@/h2-co2.md)
+- [[Speculative ideas for possible future extensions]](@/future-extensions.md)
+
 ## Other
 
-All other pages are linked here.
+Miscellaneous pages are linked here.
 
 - [[Extra content storage]](@/extra.md)
+- [[Jokes & fun page]](@/funny.md)

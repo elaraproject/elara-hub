@@ -24,7 +24,7 @@ Given the established 6-month goals, the following tasks must be completed. Note
 - [x] Complete paper 2
 - [x] Create the 6-month roadmaps
 - [ ] Clean up project and reorganize
-	- [ ] Create Elara Hub - dedicated project management and knowledge base website, see [[Project Elara Hub plan]]
+	- [ ] Create Elara Hub - dedicated project management and knowledge base website, see [[New Elara Hub plan]](@/elara-hub-creation.md)
 		- [x] Design
 		- [ ] Code with zola (include KaTeX support, Mermaid flow charts, sequence diagrams, and gantt diagrams, as well as [charter](https://github.com/Mandarancio/scidown) graphs)
 		- [ ] Publish
