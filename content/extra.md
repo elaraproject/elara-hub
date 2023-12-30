@@ -24,3 +24,10 @@ Project Elara research papers should use literate programming to ensure reproduc
 Maybe eventually add a command palette/fileswitcher to Elara Hub, and add a Obsidian-style graph view like [this](https://github.com/blinpete/wiki-graph).
 
 Implement responsivity to `elara-ui` by setting breakpoint functions in Component trait.
+
+For Elara UI also create pure CPU-based backend that uses a Rust-ported version of `fenster`. Users can choose which backend they want: 
+
+- GPU backend is faster and leads to smoother UI rendering but uses a lot of battery and can be glitchy if graphics drivers aren't working correctly, and may not be compatible with very old devices
+- For low-powered devices CPU rendering is better, but it is much slower
+
+For Elara array first optimize the CPU version as much as possible. E.g. the arithmetic operations should return a view rather than a completely new array, or use clone-on-write. The CPU backend should always be available, even if the GPU backend is faster.

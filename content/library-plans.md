@@ -37,6 +37,49 @@ Elara UI offers three different APIs:
 - The component API provides basic building blocks of UIs that can then be joined together. They are flexible while not being overly verbose.
 - The draw API allows painting custom widgets. It is the lowest-level API.
 
+Elara UI requirements:
+
+- Implementation of the entire Elara UI design system
+- Good performance, low footprint (but it does not have to be aggressively optimized)
+- Simple to use and easy to maintain
+- Battle-tested: to prove this, several apps meant for production use will be written in Elara UI to test its functionality (see the demo apps below)
+
+The single biggest inspiration for Elara UI's API is Gtk.
+
+For Elara UI apps, the primary architecture will be a core-frontend approach. The functionality of the app will reside in the core, essentially library that contains all app functions. This allows the app to be run from the terminal, as well as controlled by scripting. The core should be able to do everything the app needs to do. Meanwhile, the frontend will communicate with the core and present the interface that the user will use to control the app. However, the frontend has no functionality of its own; all the functionality is in the core, which the frontend merely provides an interface to.
+
+To integrate with this architecture, Elara UI is a retained-mode UI library, and uses the simplest API imaginable:
+
+```rust
+// 1. Create UI
+let mut ui = UI::new(1600, 1200);
+
+// 2. Create layouts
+let mut left_sidebar = Layout::default();
+
+// 3. Add elements with widgets API (easier) or 
+// components API (more control) to layout
+let mut sidebar_label = Label::new("Sidebar");
+let mut sidebar_list = List::from("Item {}", 0..5);
+
+// 4. Add callbacks to widgets to make them interactive
+// widgets can be bound to a state so that their appearance
+// is linked to that state
+sidebar_list.on(move |event| {
+    	match event {
+    		Event::Click => {
+    			ui.close();
+    		},
+    		_ => (),
+    	}
+    })
+
+// 5. Add components to layout, and add layout to UI
+left_sidebar.add_element(sidebar_label);
+left_sidebar.add_element(sidebar_list);
+ui.add_element(left_sidebar);
+```
+
 Testing demo apps:
 
 - Make an analogue of <https://sindresorhus.com/plain-text-editor>

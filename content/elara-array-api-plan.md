@@ -120,8 +120,25 @@ pub enum {
 
 Slice/View API:
 
-```rs
-ArraySlice slicer = ArraySlice::new([.., ])
+```rust
+pub fn slice(&self, slice: &[Range<usize>]) -> ArrayView<T, N>;
+pub struct ArraySlice;
+
+// usage
+let a = arr![[0.0, 1.0], [2.0, 3.0]];
+
+// returns view of entire array
+a[&[.., ..]]
+
+// returns view of 1st inner element
+a[&[s!(0), ..]] // this is equal to a[&[..1, ..]]
+
+// returns view of range
+a[&[1..2, 1..2]]
+
+// for more exotic slices use the dedicated slicer
+let s = ArraySlice::new_columns([1, 5, 8]);
+a[s] // returns another view
 ```
 
 - [x] Change all existing copying operations to operate in-place by default
