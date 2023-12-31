@@ -9,7 +9,7 @@ Elara Hub is Project Elara’s knowledge base and project management tool. Or mo
 
 ## What is this for?
 
-Think of this as a "communal brain" for the project. We organize things, plan things, write down notes, discuss project direction, and share knowledge with each other here. Everything is written using plaintext markdown files that are then automatically compiled into a website (which can both be viewed online and locally if working offline). 
+Think of this as a mixed community wiki/collaboration tool for the project. We organize things, plan things, write down notes, discuss project direction, and share knowledge with each other here. Everything is written using plaintext markdown files that are then automatically compiled into a website (which can both be viewed online and locally if working offline). 
 
 The interface is designed to be as simple and minimal as possible. Just read through each page, and navigate by the internal links in each page. The sidebar menu (and on mobile, the top menu) provide another way to quickly and easily switch files.
 
