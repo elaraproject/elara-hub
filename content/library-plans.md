@@ -260,10 +260,15 @@ mynewexpr = ans
 eval 2 * M * x^2 + 3 * t, { x = 6, t = 0.1 }
 
 // Solving ordinary differential equations
+// (can solve 1st or 2nd order ODEs)
 // This uses a neural network solver under the hood
 mydiffeq = eq dudx, 3 * u * x
-dsolve eq // symbolic solver (for both ODE and PDE)
-ndsolve eq // numerical solver
+dsolve eq // symbolic solver
+ndsolve eq // numerical solver - in UI there is option to show graph
+
+// Note however that Elara CAS is not suited
+// to complex numerical work or PDE solving,
+// both of which Elara DE specialize in
 ```
 
 The very minimalist syntax only works because you cannot nest built-in functions like `diff` and `integrate` within other functions, and those functions are delimitated by the end of the line.
