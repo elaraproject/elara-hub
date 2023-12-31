@@ -116,6 +116,8 @@ Implement the following:
 
 Current progress: see [[Elara math optimization plan]](@/elara-math-optimization.md)
 
+Elara-math will use elara-array for implementation of n-dimensional arrays, however everything else (e.g. diff eq solvers, FFT, special functions, quadrature, etc.) is custom-implemented.
+
 In the future, do a "blank rewrite" - rewriting the entire library without looking at any reference github source code. Doing this often will help improve the code quality.
 
 Autodiff implementations to look at:
@@ -296,10 +298,17 @@ Look at https://lodev.org/lodepng/ and port the 500-line `picoPNG` into a Rust v
 Implement several libraries on top of elara-gfx:
 
 - `elara-vg`: Fabric.js/Paper.js-like vector graphics library on top of elara-gfx, see <http://fabricjs.com/fabric-intro-part-1>, basically it implements the vector graphics parsing and processing and vector graphics operations, but it leaves all the rendering to `elara-gfx`, which allows it to render to any platform `elara-gfx` supports (basically all the platforms)
-- `elara-ui`: minimal UI library on top of elara-gfx used for all the Elara apps, again thanks to the library it supports all the platforms `elara-gfx` supports
+- `elara-ui`: minimal UI library on top of elara-gfx used for all the Elara apps, again thanks to the library it supports all the platforms `elara-gfx` supports (further details below)
 
 <https://zed.dev/blog/videogame>
 
+`elara-gfx` is meant to not include mathematical operations. However, for certain operations that do require handling arrays, elara-gfx will have a micro-implementation of basic math using purely functional programming. That means function signatures will look like this:
+
+```rust
+// Takes in matrix a of dims (M x N) and matrix b of dims (N x K)
+// and write the result to matrix c
+fn matmul(a: &[f64], b: &[f64], m: usize, n: usize, k: usize, c: &mut [f64]);
+```
 
 `elara-gfx` should have three main APIs:
 
