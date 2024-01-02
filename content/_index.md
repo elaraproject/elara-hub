@@ -32,7 +32,7 @@ Elara Hub is written in a plaintext format called markdown. If you're not famili
 
 When adding new files, make sure to add internal links to that new file to at least one other markdown file. This ensures navigability! Internal links follow the format `[[File name]](@/path-to-file.md)`, with the extra bracket differentiating them from web links.
 
-Important to note: do not run a production build with `zola build`, always use `zola serve` when editing/viewing files locally for live preview. The production build appends the GitHub pages base url, meaning it does not work offline anymore.
+Important to note: do not run a production build with `zola build`, always use `zola serve` when editing/viewing files locally for live preview. The production build appends the GitHub pages base url, meaning it does not work offline anymore. In addition, make sure your editor is configured to use spaces, not tabs, when editing code blocks! Otherwise they render oddly.
 
 The site is easiest to edit with a code editor that has a command palette-style fuzzy-matching filepicker or [fzf](https://github.com/junegunn/fzf) support.
 

@@ -106,15 +106,15 @@ Error API:
 
 ```rust
 struct ErrorInfo {
-	source: &'static str, // the function that called the error
-	file: &'static str,
-	line: usize,
-	additional_info: String
+    source: &'static str, // the function that called the error
+    file: &'static str,
+    line: usize,
+    additional_info: String
 }
 
 pub enum {
-	SomeError1(ErrorInfo),
-	SomeError2(ErrorInfo)
+    SomeError1(ErrorInfo),
+    SomeError2(ErrorInfo)
 }
 ```
 

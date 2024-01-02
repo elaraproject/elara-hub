@@ -66,13 +66,13 @@ let mut sidebar_list = List::from("Item {}", 0..5);
 // widgets can be bound to a state so that their appearance
 // is linked to that state
 sidebar_list.on(move |event| {
-    	match event {
-    		Event::Click => {
-    			ui.close();
-    		},
-    		_ => (),
-    	}
-    })
+    match event {
+        Event::Click => {
+            ui.close();
+        },
+        _ => (),
+    }
+})
 
 // 5. Add components to layout, and add layout to UI
 left_sidebar.add_element(sidebar_label);
@@ -277,6 +277,8 @@ The very minimalist syntax only works because you cannot nest built-in functions
 
 Note: Elara ML is responsible for implementing the higher-level constructs for efficient machine learning (e.g. dense layers, convolution layers, model architectures, pretrained models, etc.) while Elara Math handles the underlying computations.
 
+See [[Elara ML API proposal]](@/elara-ml-api.md)
+
 <https://github.com/utility-code/tinyDL>
 
 ## elara-gfx
@@ -298,7 +300,7 @@ Features:
 	- [ ] <https://github.com/vkoskiv/c-ray>
 	- [ ] The [raytracing series](https://raytracing.github.io/)
 
-Look at https://lodev.org/lodepng/ and port the 500-line `picoPNG` into a Rust version for `elara-gfx`.
+Look at <https://lodev.org/lodepng/> and port the 500-line `picoPNG` into a Rust version for `elara-gfx`.
 
 Implement several libraries on top of elara-gfx:
 
@@ -342,23 +344,23 @@ This means that to use `elara-gfx` is as simple as declaring:
 use elara_gfx::{GfxRenderer, RenderBackend};
 
 fn main() {
-	// use the cross-platform CPU backend
-	// the backend is kind of like https://zserge.com/posts/fenster/
-	let ctx = GfxRenderer::create_ctx(RenderBackend::CPU);
-	ctx.draw(...);
+    // use the cross-platform CPU backend
+    // the backend is kind of like https://zserge.com/posts/fenster/
+    let ctx = GfxRenderer::create_ctx(RenderBackend::CPU);
+    ctx.draw(...);
 
-	// use the cross-platform OpenGL backend
-	let ctx = GfxRenderer::create_ctx(RenderBackend::OpenGL);
-	ctx.draw(...);
+    // use the cross-platform OpenGL backend
+    let ctx = GfxRenderer::create_ctx(RenderBackend::OpenGL);
+    ctx.draw(...);
 
-	// use the Apple-only Metal backend
-	let ctx = GfxRenderer::create_ctx(RenderBackend::Metal);
-	ctx.draw(...);
+    // use the Apple-only Metal backend
+    let ctx = GfxRenderer::create_ctx(RenderBackend::Metal);
+    ctx.draw(...);
 
-	// use the cross-platform Image backend
-	// this is most suitable to rendering to an image like a PNG
-	let ctx = GfxRenderer::create_ctx(RenderBackend::Image);
-	ctx.draw(...);
+    // use the cross-platform Image backend
+    // this is most suitable to rendering to an image like a PNG
+    let ctx = GfxRenderer::create_ctx(RenderBackend::Image);
+    ctx.draw(...);
 }
 ```
 
