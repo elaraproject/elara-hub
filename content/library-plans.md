@@ -101,6 +101,8 @@ design stuff:
 
 For elaraui components - implement all the components that egui has in its demo
 
+Elara UI should support a unified theme framework like https://github.com/hundredrabbits/Themes. Config specifies whether a theme is light or dark, and then specifies the colors of the theme. The Elara Design demo app can be used to preview the colors, and there is also an editor to visually edit themes. The Rust version of Elara UI (from which all the other versions are built from) will ship with a number of themes by default.
+
 Cool apps to maybe port one day to `elara-ui` as demo applications:
 
 - <https://github.com/FPurchess/blank>
