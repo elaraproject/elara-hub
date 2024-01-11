@@ -22,6 +22,16 @@ Why do this? It integrates the best things about both SSTOs and conventional roc
 - Isn't as limited by payload constraints of SSTOs because it uses lift and efficient jet engines to gain speed at low altitudes, then uses expendable rockets for the second stage - in fact it should be able to carry more payload than a comparable 2-stage rocket given the boosting effect of the jet engine at low altitudes, allowing the second stage expendable boosters to be smaller
 - It works well with economies of scale, which is the best way to achieve inexpensive spaceflight
 
+Active cooling for reentry systems to prevent need for thermal tiling.
+
+Engine stages:
+
+- Takeoff-Cruise: turbofan with afterburner (or alternatively electromagnetic catapult, it must get to 300 km/h or above for its ramjet to work)
+- Cruise-15km: ramjet
+- 15km-70km: scramjet, from 30km onwards boosted by rocket
+
+The same intake is used by both the turbofan and ram/scramjet. However, the air from the intake is rerouted to the appropriate engine at the appropriate stage.
+
 ## Elara-powered vertical farms
 
 Vertical farms that use hydroponics for massively increased food growth efficiency, to feed the world.
