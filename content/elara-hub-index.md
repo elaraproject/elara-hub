@@ -4,7 +4,9 @@ title = "Elara Hub Index"
 
 ## The Vision
 
-Project Elära is a project to create **a world worthy of human dignity** through the spirit of collaboration and openness.
+Project Elara is a unified mission of many committed people to share knowledge, improve the lives of others, and gift our work to the world.
+
+We want to create **a world worthy of human dignity** through the spirit of collaboration and openness.
 
 We gather people together to work on **open research and open technologies** that benefit everyone.
 
@@ -22,6 +24,7 @@ The project is planned broadly with 6-month roadmaps which dictate the prioritie
 
 - 11/10/23 - first paper submitted, got lab approved
 - 12/10/23 - second paper completed
+
 
 ## Project directory
 
