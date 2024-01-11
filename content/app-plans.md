@@ -2,6 +2,10 @@
 title = "Project Elara app plans"
 +++
 
+Note: all of these apps follow a core-frontend architecture. That is, their entire functionalities are exposed via a *core library* (e.g. `libde` for Elara DE and `libgeod` for Elara Geo), and the frontend is just the UI. 
+
+Project Elara apps have UIs but many have an additional python REPL with a live preview window by default. The entire app's functions is accessible via REPL thanks to the core-frontend architecture.
+
 ## elara-geo
 
 Rust reimplementation of <https://github.com/tauzero7/GeodesicViewer>
@@ -18,6 +22,20 @@ Make automated ODE and PDE solver. It should have the following features:
 - Slope fields for first-order ODEs
 - Built-in visualization tools for solutions (defaults to lines for single-variable functions, heatmaps for two-variable (3D) functions, and density plots for three-variable (4D) functions, with the colors automatically scaled based on max intensity and the opacity of each pixel scaled based on the inputted grid density)
 - Has both a PINN (neural-network based) solver and a conventional grid-based solver.
+Elara DE's planned API:
+
+```rust
+// example DE solving
+x, y, z = var!(x, y, z);
+k = const!(k = 5);
+
+// ODE example
+let f = DE::fn("f", x);
+let dfdx = diff(f, x);
+let eq = diffeq![dfdx = 3 * k * y];
+eq.set_initial();
+eq.dsolve();
+```
 
 ## elara-cas
 
