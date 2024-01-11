@@ -29,6 +29,7 @@ These are more in-depth pages about specific aspects of the project. Many of the
 
 - [[Project Philosophy]](@/project-philosophy.md)
 - [[Project Elara libraries plan]](@/library-plans.md)
+- [[Elara apps plan]](@/app-plans.md)
 - [[Visualization-based outreach]](@/visualization-outreach.md)
 - [[Things to add to Elara Handbook]](@/handbook-addthings.md)
 - [[Project development stages]](@/stages.md)
