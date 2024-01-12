@@ -2,8 +2,9 @@
 title = "Integration techniques"
 +++
 
-Many physics problems encountered in Project Elara require the use of integration to solve. These are some common techniques for integration:
+Many physics problems encountered in Project Elara require the use of integration to solve (particularly differential equations and physical quantities expressed in terms of definite integrals). These are some common techniques for integration:
 
+- Guess the antiderivative and check
 - Elementary integrals (which are just the derivative rules in reverse)
 - U-substitution
 - Integration by parts
