@@ -26,7 +26,7 @@ nav {
 	@include md { 
 		display: flex;
 		flex-direction: row;
-		column-gap: 2rem; 
+		column-gap: 2rem;
 	}
 	flex: 0 0 15%; // cannot grow, can shrink
 	@include md { flex: none; }
@@ -34,7 +34,8 @@ nav {
 	margin-right: 4rem;
 	@include md { margin: 0; }
 	padding: $common-top-padding 2rem $common-top-padding 1.5rem;
-	@include md { padding: 1.5rem 0; }
+	@include md { padding: 1.5rem 3rem; }
+	@include sm { padding: 1.5rem 0; }
 	border-right: $border;
 	@include md {
 		border-right: none;
@@ -95,9 +96,10 @@ main {
 	@include md { margin-top: 0; }
 	flex-grow: 1;
 	padding-top: $common-top-padding;
-		padding-bottom: $common-top-padding;
+	padding-bottom: $common-top-padding;
 	padding-right: 4rem;
-	@include md { padding: 2rem 0.5rem; }
+	@include md { padding: 2rem 3rem; }
+	@include sm { padding: 2rem 0.5rem; }
 	justify-content: flex-start;
 	overflow-y: scroll;
 }
