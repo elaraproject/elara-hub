@@ -10,7 +10,11 @@ Project Elara apps have UIs but many have an additional python REPL with a live 
 
 Rust reimplementation of <https://github.com/tauzero7/GeodesicViewer>
 
-## elara-DE
+## elara-compute ("Euler")
+
+A numerical computing environment that feels like symbolic computation, based on <https://github.com/chebfun/chebfun>.
+
+## elara-DE ("Principia")
 
 Make automated ODE and PDE solver. It should have the following features:
 
