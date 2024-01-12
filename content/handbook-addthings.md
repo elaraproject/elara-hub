@@ -41,6 +41,8 @@ A differential equation defines something by how it changes.
 Horner's method
 <https://math.stackexchange.com/questions/1356981/why-does-the-separation-of-variables-method-for-des-work>
 
+Make loss function visualization for single neuron NN (1 weight 1 bias) for Elara Handbook.
+
 ## For ecosystem
 
 Establish the Betancourt Doctrine - project elara will neither recognize nor establish relationships with governments, organizations or groups that have committed, or aim to commit human rights abuses, derive their authority from non-democratic means, or commit gross abuses of power
