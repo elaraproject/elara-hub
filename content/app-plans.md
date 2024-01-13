@@ -41,6 +41,15 @@ eq.set_initial();
 eq.dsolve();
 ```
 
+Elara-DE will have three solvers - Taylor series/autodiff solver, grid-based solver, and NN solver. Each has its advantages and disadvantages:
+
+- Taylor solver & NN solver don't have curse of dimensionality, are much faster, and can compute values at an arbitrary point in the domain (because they return functions, not discrete arrays)
+    - Taylor solver is probably faster
+    - NN solver is much more well-proven and may be more accurate
+- Grid-based solver isn't as finnicky as PINN (because training neural networks to predict accurately is an art as much as a science, you have to consider things like learning rate, overfitting, etc. whereas grid solver gives you dependable results every time) and unlike Taylor solver, it can solve for implicit as well as explicit solutions
+
+Of these I'll make the Taylor solver and grid solver first, and PINN last as neural networks are very finnicky to train.
+
 ## elara-cas
 
 (note: awaiting better name)
