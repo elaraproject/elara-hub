@@ -49,7 +49,7 @@ These are common standards used within the project.
 
 ## Knowledge base
 
-These are guides to specific areas of knowledge important to the project
+These are reference guides to specific areas of knowledge important to the project. Note that these pages are condensed knowledge/information without a lot of explanation. Therefore, it is targetted for already experienced researchers/developers. For those unfamiliar with a topic, it may be less suitable; the Elara Handbook is the recommended place to go to be able to learn these topics.
 
 - [[All about partial differential equations]](@/all-about-pdes.md)
 - [[Multivariable calculus guide]](@/multivar.md)
