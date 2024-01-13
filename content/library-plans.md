@@ -8,6 +8,47 @@ title = "Project Elara library plans"
 - Move to [Codeberg](https://codeberg.org/) for hosting in the future and keep github as mirrors
 - All libraries that currently depend on `elara-log` should be able to make `elara-log` an optional dependency behind the `logging` feature flag. If disabled, they will simply use `println!` instead.
 
+### Standard library architecture
+
+Above all else, project elara libraries (not apps!) should aim for minimalism and simplicity, in the style of [tinygrad](https://github.com/tinygrad/tinygrad). Where more features and more code isn't necessary, it's not written, or it's an optional feature. This does mean users need to write more code to compensate for things libraries don't themselves do, but it also gives the user a lot more control. The idea is the project elara libraries should never be giant megaframeworks like React.js or TensorFlow.
+
+To do this, project elara libraries rely on the idea of implementation-agnostic code and backends. E.g. `elara-ui` does not come with a backend. There is, however, a few simple lines of boilerplate code that users can easily add to use `elara-gfx` as the backend. This allows `elara-ui` to have no dependencies (other than the optional logger). Usage would be like this:
+
+```rust
+use elara_ui::prelude::*;
+use elara_gfx::prelude::*;
+
+fn main() {
+	// elara-gfx boilerplate...
+	let rect_renderer = RectRenderer::new();
+	let line_renderer = LineRenderer::new();
+	let text_renderer = TextRenderer::new();
+
+	let ui = UI::new();
+	ui.set_layout(5, 5, 5, 8);
+	label = Label::new("Hi!");
+	ui.add_element(label)
+	// ui stuff...
+
+	let frame = ui.render();
+	for el in frame.iter() {
+		match el {
+			Component::Button => {
+				text_renderer.draw([10, 5], 50, 0, 5);
+				line_renderer.draw(50, 60, 1, false);
+				// etc.
+			}
+		}
+	}
+}
+```
+
+Similarly, `elara-ml` doesn't have a backend either (though it does have an optional feature flag that gives it a CPU backend implementation that uses both `elara-math` and `elara-array`). The library docs give more examples of possible implementations, and custom backends can be written for `elara-ml` as well, which would probably be useful for custom machine learning hardware in the future.
+
+`elara-math` also doesn't have a backend - this allows its autodiff, integration, diff eq solvers, and special functions to work regardless of what backend provides the backing array.
+
+The only library for which this mostly doesn't apply is `elara-array`, which comes with a built-in CPU and GPU backend by default (though the GPU backend is behind an optional feature flag). This is because `elara-array` itself is a very minimal library anyways, and all it implements is a n-dimensional array that supports elementwise operations. In addition, its CPU and GPU backends together only have 3 dependencies.
+
 ## elara-astro
 
 <https://crates.io/crates/nyx-space>
@@ -150,6 +191,37 @@ Also add a monte-carlo solver for ODEs: <https://jotterbach.github.io/content/po
 Note: Elara ML is responsible for implementing the higher-level constructs for efficient machine learning (e.g. dense layers, convolution layers, model architectures, pretrained models, etc.) while Elara Math handles the underlying computations.
 
 See [[Elara ML API proposal]](@/elara-ml-api.md)
+
+`elara-ml` goals:
+
+- Correct: a model written in PyTorch or TensorFlow should make equivalent predictions when ported to `elara-ml`
+- Comprehensible: source code is in idiomatic Rust with lots of comments
+- Minimal: only the features you really need
+- Efficient: works fast, handles errors gracefully, and has an API with good developer experience, such as `model.summary()` visualizations (and isn't error-prone or overly verbose). It should also have good UI - e.g. progress bars on training.
+
+For `elara-ml` instead of a vec of two tensors (the weights and the biases) which is wasteful in terms of memory, it would be more efficient to just iterate separately on the weights and biases. So instead of:
+
+```rust
+for t in self.parameters().iter() {
+	t.update(lr);
+}
+```
+
+instead do:
+
+```rust
+for t in self.weights().iter() {
+	t.update(lr);
+}
+
+for t in self.biases().iter() {
+	t.update(lr);
+}
+```
+
+Also `elara-ml` should have dedicated `Input` and `Output` layers - they are basically normal Linear layers with a type alias, but they greatly improve in preventing errors in models.
+
+`elara-ml` should have both tests verifying correctness in code and in functionality. That is, part of its tests should be various neural networks that take in a random number of input features and labels (of different shapes, e.g. 500x3, 1x8, etc.) and should be able to predict the same features and labels with minimal configuration correctly at **every point**.
 
 <https://github.com/utility-code/tinyDL>
 
