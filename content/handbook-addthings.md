@@ -6,6 +6,12 @@ title = "Things to add to Elara Handbook"
 
 For the first page, change "learn, develop, or contribute to Project Elara" to "learn to develop or contribute to Project Elara", that wording would be clearer.
 
+Elara Handbook teaching methodology:
+
+- First, a 1-3 paragraph overview/introduction of a topic and why it's cool/important/worth learning. This should be a "hook" to the reader and make them interested.
+- Then, a step-by-step explanation of the topic, building from the most basic principles. Everything is fully explained in the greatest detail possible, and there are fully worked-through practice problems
+- Finally, a wrap-up on the topic, pointers to where to learn more, and a reflection on the topic
+
 ## For knowledge library
 
 $W = \Delta K = -\Delta U$
@@ -42,6 +48,10 @@ Horner's method
 <https://math.stackexchange.com/questions/1356981/why-does-the-separation-of-variables-method-for-des-work>
 
 Make loss function visualization for single neuron NN (1 weight 1 bias) for Elara Handbook.
+
+Elara handbook ML guide reference:
+- http://neuralnetworksanddeeplearning.com/index.html
+- https://www.deeplearningbook.org/
 
 ## For ecosystem
 
