@@ -4,7 +4,7 @@ title = "Elara Hub Index"
 
 ## The Vision
 
-Project Elara is a unified mission of many committed people to share knowledge, improve the lives of others, and gift our work to the world.
+Project Elara is a collaborative effort to share knowledge, improve the lives of others, and gift our work to the world.
 
 We want to create **a world worthy of human dignity** through the spirit of collaboration and openness.
 
