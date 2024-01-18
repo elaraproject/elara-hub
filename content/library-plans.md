@@ -264,8 +264,10 @@ fn matmul(a: &[f64], b: &[f64], m: usize, n: usize, k: usize, c: &mut [f64]);
 `elara-gfx` should have three main APIs:
 
 - `GfxRenderer`, which is common graphics rendering layer like SDL (just with the ability to render both on the CPU and the GPU)
-- `GPUCompute`, which is an OpenGL wrapper for GPU computations (like CUDA)
+- `GPUCompute`, which is an OpenGL wrapper for GPU computations (like CUDA), inspired by [this](https://github.com/DanRuta/GPGPU)
 - `Platform`, a very low-level API to do things like window creation, event listening, etc.
+
+Again, it aims to eventually be zero-dependency, which means that you do need to write OpenGL boilerplate initialization code yourself.
 
 Crucially `elara-gfx` **should not** implement any math functions. That is what `elara-math` and `elara-array` does.
 
