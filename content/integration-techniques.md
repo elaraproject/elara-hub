@@ -4,7 +4,7 @@ title = "Integration techniques"
 
 Many physics problems encountered in Project Elara require the use of integration to solve (particularly differential equations and physical quantities expressed in terms of definite integrals). These are some common techniques for integration:
 
-- Guess the antiderivative and check
+- Guess the antiderivative and check ("method of inspired guessing") - for reference see [this PDF](http://royalpathtomath.org/docs/Integration%20by%20Guessing.pdf)
 - Elementary integrals (which are just the derivative rules in reverse)
 - U-substitution
 - Integration by parts
