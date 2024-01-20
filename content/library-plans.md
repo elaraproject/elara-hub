@@ -177,6 +177,8 @@ Implement sparse matrices: <https://crates.io/crates/sprs>
 - [x] Also add a numerical quadrature feature to `elara-math` to compute integrals:
 - [ ] Implement simpson's rule and Gauss-Konrod rule based on https://github.com/esa/torchquad for 1D case, Monte-Carlo integration for N-D case, as well as Trapezoidal and Romberg quadrature for integrating over discrete arrays
 - [ ] Add automatic integration - this is like automatic differentiation, only it takes a function and integrates its nth Taylor polynomial (which can be found exactly) - since unlike typical numerical integration it can be done to machine precision and thus doesn't suffer from numerical precision errors, it could be far more precise
+    - Note: for this approach, automatic differentiation is necessary to compute the values of the derivative to construct the Taylor series
+    - Techniques similar to Gauss-Konrod quadrature will probably be necessary to do range reduction for this approach to work well
 
 <https://crates.io/crates/quad-rs/0.1.2>
 
