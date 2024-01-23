@@ -282,9 +282,14 @@ The `GfxRenderer` layer is able to draw basically anything graphics-related:
 	- Triangles
 - Text
 - Images
-- Any 2D curve given a set of vertices
-- Any 2D shape given a set of vertices (which means e.g. if you want to draw a bezier curve, you need to write your algorithm to convert it to an array of vertices)
-- (Future) any 3D object given a set of vertices using shaders (the shaders are Rust closures that take in a 32-bit vertex data and fragment data array as input and output another 32-bit raster array)
+    - Typical textures
+    - Optionally images created procedurally using elara-gfx shaders
+        - The shaders are Rust closures that take in 32-bit vertex data and fragment data as input and output a 32-bit raster image
+        - This means theoretically the shaders can render anything (even 3D objects or scenes)
+        - However since the shaders are CPU-based they are slow, the OpenGL canvas is faster and should be used for intensive rendering tasks
+- Any 2D curve of arbitrary stroke and line color given a set of vertices
+- Any 2D shape of arbitrary stroke and fill given a set of vertices (which means e.g. if you want to draw a bezier curve, you need to write your algorithm to convert it to an array of vertices)
+- OpenGL canvas (GPU only, can run arbitrary OpenGL drawing commands)
 
 This means that to use `elara-gfx` is as simple as declaring:
 
