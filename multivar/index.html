@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elara Hub</title>
+    
+    <link rel="stylesheet" href="https://elaraproject.github.io/elara-hub/index.css">
+    <!--KaTeX-->
+    <link rel="stylesheet" href="https://elaraproject.github.io/elara-hub/katex/katex.min.css">
+
+    <!--Open Sans-->
+    <link rel="stylesheet" href="https://elaraproject.github.io/elara-hub/open-sans/open-sans.css">
+    
+</head>
+<body>
+    <nav>
+    	<span class="header active">
+    		<a href="https://elaraproject.github.io/elara-hub">Elara Hub</a> :: <a href="https://elaraproject.github.io/elara-hub/elara-hub-index/">Home</a>
+    	</span>
+    	<a class="header mobile-only" href="https://elaraproject.github.io/elara-hub/menu/">Menu</a>
+    	<ul>
+    	 
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/6-month-roadmap-1/">6-month roadmap 1</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/all-about-pdes/">All about partial differential equations</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/alt-de-solver/">Alternate differential equation solver</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/black-hole-raytracing/">Black hole raytracing</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/elara-gfx-continuing-work/">Elara GFX continuing work plan</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/elara-hub-creation/">Elara Hub creation plan</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/elara-hub-index/">Elara Hub Index</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/meta/">Elara Hub Meta</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/markdown-guide/">Elara markdown guide</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/elara-math-optimization/">Elara math optimization strategies</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/elara-ml-api/">Elara ML API proposal</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/elara-array-api-plan/">Elara-array API</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/extra/">Extra content</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/focusing-chamber-1/">Focusing chamber theoretical analysis 1</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/geometrized/">Geometrized units</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/h2-co2/">Hydrogen from CO2 production</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/integration-techniques/">Integration techniques</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/menu/">Menu (for mobile)</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/multivar/">Multivariable calculus guide</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/stages/">Project development stages</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/app-plans/">Project Elara app plans</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/library-plans/">Project Elara library plans</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/outreach-plan/">Project Elara Outreach Plan</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/funny/">Project humour and jokes</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/project-philosophy/">Project Philosophy</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/eval-christoffels/">Quickly evaluating the Christoffel symbols</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/relativity-hub/">Relativity Hub</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/future-extensions/">Speculative future extensions</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/standard-notation/">Standardized calculus notation</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/handbook-addthings/">Things to add to Elara Handbook</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/visualization-outreach/">Visualization-based outreach</a></li>
+    	 
+    	</ul>
+    </nav>
+
+    <main>
+    	<article>
+	    
+	<h1>Multivariable calculus guide</h1>
+	<!--eventually add in authors-->
+	<h2 id="partial-derivatives">Partial derivatives</h2>
+<p>Partial derivatives differentiate only to the given variable while holding all other variables constant. They can be noted with $\frac{\partial f}{\partial x}$ or $f_x$. The formal definition of the partial derivative in 2D is:</p>
+<p>$$
+\frac{\partial f}{\partial x} = \lim_{h \to 0} \frac{f(x + h, y) - f(x, y)}{h}
+$$</p>
+<h2 id="mixed-partial-derivatives">Mixed partial derivatives</h2>
+<p>Second partial derivatives are denoted by $\frac{\partial^2 f}{\partial x^2}$ or $f_{xx}$. When using the &quot;del&quot; notation (with the $\partial$ symbol) you take derivatives from right to left order; when using the subscript notation, you take derivatives from left to right order.</p>
+<p>Second partial derivatives <strong>commute</strong>, which means the order you take them doesn't matter. Thus $\frac{\partial f}{\partial x \partial y} = \frac{\partial f}{\partial y \partial x}$.</p>
+<h2 id="the-nabla-symbol">The nabla symbol</h2>
+<p>The nabla symbol $\nabla$ represents a &quot;vector&quot; of partial derivative operators:</p>
+<p>$$
+\nabla = \left\langle \frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z} \right\rangle
+$$</p>
+<h2 id="scalar-valued-functions">Scalar-valued functions</h2>
+<p>A scalar-valued function is a function that always outputs a number for each input, not a vector, such as $f(x, y) = 2x + 3y^2$.</p>
+<h2 id="gradients">Gradients</h2>
+<p>The gradient of a scalar-valued function, denoted $\nabla f$, is given by a vector containing all the partial derivatives of the function. In two dimensions, it is given by:</p>
+<p>$$
+\nabla f(x, y) = \left\langle \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right\rangle
+$$</p>
+<p>In three dimensions, it is similarly given by:</p>
+<p>$$
+\nabla f(x, y, z) = \left\langle \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} \right\rangle
+$$</p>
+<p>The gradient can be evaluated at a point $(x, y, z)$ by evaluating each of the partial derivatives at that point</p>
+<h2 id="directional-derivative">Directional derivative</h2>
+<p>The directional derivative is the rate of change along a specific vector $\vec v$ and is given by:</p>
+<p>$$
+\nabla_{\vec v} , f = \nabla f \cdot \vec v
+$$</p>
+<h2 id="multivariable-chain-rule">Multivariable chain rule</h2>
+<p>If we have a function $f(g(t))$, then:</p>
+<p>$$
+\frac{df}{dt} = \frac{\partial f}{\partial x} \frac{dx}{dt} + \frac{\partial f}{\partial y} \frac{dt}{dt} = \nabla f(g(t)) \cdot g'(t)
+$$</p>
+<h2 id="parametric-surfaces">Parametric surfaces</h2>
+<p>Just as there can be surfaces formed by functions of $x$ and $y$, there can be parametric surfaces formed by functions of $s$ and $t$. They are denoted $f(s, t)$ and can be differentiated in the same way as normal surfaces, i.e. $\frac{\partial f}{\partial s}$ and $\frac{\partial f}{\partial t}$.</p>
+<h2 id="vector-valued-functions">Vector-valued functions</h2>
+<p>Vector-valued functions produce a vector for each input, for instance:</p>
+<p>$$
+\vec f(t) = 
+\begin{bmatrix}
+t^2 + 2t \
+\sin(2t) + t
+\end{bmatrix}
+$$
+Note that vector-valued functions can have components that are functions of $x, y, z$, or functions of $t$, in which case its components are <strong>parametric functions</strong>.</p>
+<p>The derivative of a vector-valued function is another vector in all cases. For example, velocity is often given by a vector-valued function where:</p>
+<p>$$
+\vec v(t) = \begin{bmatrix}
+v_x(t) \
+v_y(t) \
+v_z(t)
+\end{bmatrix} = \begin{bmatrix}
+x'(t) \
+y'(t) \
+z'(t)
+\end{bmatrix}
+$$</p>
+<p>Speed is given by the norm of the velocity function:</p>
+<p>$$
+v = \sqrt{v_x^2 + v_y^2 + v_z^2}
+$$
+If the vector-valued function is of one variable, e.g. $\vec v(t)$, then its derivative is a regular derivative $\frac{d \vec v}{dt}$. If the vector-valued function is of several variables, e.g. $\vec v(s, t)$, then it has one partial derivative for each variable, e.g. $\frac{\partial \vec v}{\partial s}$ and $\frac{\partial \vec v}{\partial t}$.</p>
+<p>The same methodology for vector-valued functions applies to vector fields.</p>
+<h2 id="curvature">Curvature</h2>
+<p>The curvature $\kappa$ of a vector-valued function $\vec v(t)$ is given by:</p>
+<p>$$
+\kappa = \frac{|d \vec T|}{|ds|} = \frac{\vec v'(t)}{| v'(t)|}
+$$
+where the double bars indicate normalizing the vector.</p>
+<h2 id="vector-fields-and-scalar-fields">Vector fields and scalar fields</h2>
+<p>Fields are mathematical objects that span space and have a unique value at each point in space. Familiar examples include the electromagnetic field and gravitational field. They are written with the same notation as functions, just usually with a different symbol such as $E$, $B$, $g$ or $\phi$.</p>
+<p>Scalar fields, such as temperature, assign a number to each point in space. Vector fields assign a vector to each point in space. A gradient is only defined for a scalar field - the vector-field equivalent of the gradient for vector fields is called the Jacobian, and will be covered later.</p>
+<h2 id="divergence">Divergence</h2>
+<p>Divergence, denoted by $\nabla \cdot \vec F$, represents the tendency of a vector field to flow out or in to a certain point:</p>
+<ul>
+<li>If vectors that point inwards towards a certain point are bigger than vectors that point outwards at that point, the divergence is <strong>negative</strong> and we have a <strong>sink</strong></li>
+<li>If vectors that point inwards towards a certain point are smaller than vectors that point outwards at that point, the divergence is <strong>positive</strong> and we have a <strong>source</strong></li>
+<li>If vectors that point inwards and vectors that point outwards at a certain point are equal in size, the divergence is <strong>zero</strong></li>
+</ul>
+<p>The divergence of a vector field $\vec F$ with components $\langle F_x, F_y, F_z\rangle$ is given by:</p>
+<p>$$
+\nabla \cdot \vec F = \frac{\partial F_x}{\partial x} + \frac{\partial F_y}{\partial y} + \frac{\partial F_z}{\partial z}
+$$
+Divergence is <strong>only</strong> defined on vector fields, not on scalar fields.</p>
+<h2 id="curl">Curl</h2>
+<p>Curl, denoted by $\nabla \times \vec F$, represents the tendency of a vector field to rotate around a certain point:</p>
+<ul>
+<li>Positive curl is a tendency of vectors to rotate counterclockwise around a point</li>
+<li>Negative curl is a tendency of vectors to rotate clockwise around a point</li>
+<li>Zero curl is when counterclockwise and clockwise vectors cancel out or if the vectors do not rotate around a point</li>
+</ul>
+<p>In 2D, the curl of a vector field is given by:</p>
+<p>$$
+\nabla \times \vec F = \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y}
+$$</p>
+<p>In 3D, the curl of a vector field is the determinant of a 3 x 3 matrix:</p>
+<p>$$
+\nabla \times \vec F = 
+\begin{vmatrix}
+\hat i &amp; \hat j &amp; \hat k \
+\frac{\partial}{\partial x} &amp; \frac{\partial}{\partial y} &amp; \frac{\partial}{\partial z} \
+F_x &amp; F_y &amp; F_z
+\end{vmatrix}
+$$</p>
+<h2 id="laplacian">Laplacian</h2>
+<p>The Laplacian, denoted by $\nabla^2 f$, is a vector field formed from the second derivatives of a scalar field. It is given by:</p>
+<p>$$
+\nabla^2 f = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2}
+$$</p>
+<p>A function is called <strong>harmonic</strong> if it satisfies $\nabla^2 f = 0$. This is a partial differential equation called <strong>Laplace's equation</strong>.</p>
+<h2 id="jacobian">Jacobian</h2>
+<p>The Jacobian is the analogue of the gradient for vector-valued functions. For a vector-valued function $\vec F$ with components $\langle F_x, F_y \rangle$, the Jacobian is given by:</p>
+<p>$$
+J = 
+\begin{bmatrix}
+\nabla F_x \
+\nabla F_y
+\end{bmatrix} =
+\begin{bmatrix}
+\frac{\partial F_x}{\partial x} &amp; \frac{\partial F_x}{\partial y} \
+\frac{\partial F_y}{\partial x} &amp; \frac{\partial F_y}{\partial y}
+\end{bmatrix}
+$$
+For a vector valued function $\vec F$ of three dimensions, the Jacobian is given by:</p>
+<p>$$
+J =
+\begin{bmatrix}
+\frac{\partial F_x}{\partial x} &amp; \frac{\partial F_x}{\partial y} &amp; \frac{\partial F_x}{\partial z} \
+\frac{\partial F_y}{\partial x} &amp; \frac{\partial F_y}{\partial y} &amp; \frac{\partial F_y}{\partial z} \
+\frac{\partial F_z}{\partial x} &amp; \frac{\partial F_z}{\partial y} &amp; \frac{\partial F_z}{\partial z}
+\end{bmatrix}
+$$
+The determinant of the Jacobian is calculated just like the determinant of any other matrix. The absolute value of the determinant of the Jacobian tells us about how areas change area around a point:</p>
+<ul>
+<li>If the determinant is 1, the area remains the same area</li>
+<li>If the determinant is less than 1, the area contracts</li>
+<li>If the determinant is greater than 1, the area expands</li>
+<li>If the determinant is 0, the area contracts infinitely</li>
+</ul>
+<h2 id="tangent-plane">Tangent plane</h2>
+<p>The tangent plane is the local <strong>linear approximation</strong> to a function at a certain point. It is often used to simplify a complicated function when the area being studied is around a certain point.</p>
+<h2 id="tangent-plane-explicit-functions">Tangent plane (explicit functions)</h2>
+<p>The tangent plane to a function $f(x, y)$ at a point $(x_0, y_0)$ is given by:</p>
+<p>$$
+T(x, y) = f(x_0, y_0) + f_x (x_0, y_0) (x - x_0) + f_y (x_0, y_0) (y - y_0)
+$$</p>
+<h2 id="tangent-plane-implicit-functions">Tangent plane (implicit functions)</h2>
+<p>The implicit tangent plane to a function $f(x, y, z) = 0$ at a point $(x_0, y_0, z_0)$ is given by:</p>
+<p>$$
+f_x (x - x_0) + f_y(y - y_0) + f_z (z - z_0) = 0
+$$</p>
+
+
+	    </article>
+    </main>
+
+    <script>
+    // Necessary until pulldown-cmark (which Zola depends on)
+    // auto-appends a .tasklist class to all list items
+    // that contain task lists
+    document.querySelectorAll("input[type='checkbox']").forEach((el) => el.parentElement.classList.add("tasklist"));
+    </script>
+
+    <script defer src="https://elaraproject.github.io/elara-hub/katex/katex.min.js"></script>
+    <script defer src="https://elaraproject.github.io/elara-hub/katex/contrib/auto-render.min.js"></script>
+
+    <script>
+    	// Loading KaTeX
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+              // customised options
+              // • auto-render specific keys, e.g.:
+              delimiters: [
+                  {left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  {left: '\\(', right: '\\)', display: false},
+                  {left: '\\[', right: '\\]', display: true}
+              ],
+              // • rendering keys, e.g.:
+              throwOnError : false
+            });
+        });
+    </script>
+</body>
+</html>

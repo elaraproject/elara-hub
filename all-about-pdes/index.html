@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elara Hub</title>
+    
+    <link rel="stylesheet" href="https://elaraproject.github.io/elara-hub/index.css">
+    <!--KaTeX-->
+    <link rel="stylesheet" href="https://elaraproject.github.io/elara-hub/katex/katex.min.css">
+
+    <!--Open Sans-->
+    <link rel="stylesheet" href="https://elaraproject.github.io/elara-hub/open-sans/open-sans.css">
+    
+</head>
+<body>
+    <nav>
+    	<span class="header active">
+    		<a href="https://elaraproject.github.io/elara-hub">Elara Hub</a> :: <a href="https://elaraproject.github.io/elara-hub/elara-hub-index/">Home</a>
+    	</span>
+    	<a class="header mobile-only" href="https://elaraproject.github.io/elara-hub/menu/">Menu</a>
+    	<ul>
+    	 
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/6-month-roadmap-1/">6-month roadmap 1</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/all-about-pdes/">All about partial differential equations</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/alt-de-solver/">Alternate differential equation solver</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/black-hole-raytracing/">Black hole raytracing</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/elara-gfx-continuing-work/">Elara GFX continuing work plan</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/elara-hub-creation/">Elara Hub creation plan</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/elara-hub-index/">Elara Hub Index</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/meta/">Elara Hub Meta</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/markdown-guide/">Elara markdown guide</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/elara-math-optimization/">Elara math optimization strategies</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/elara-ml-api/">Elara ML API proposal</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/elara-array-api-plan/">Elara-array API</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/extra/">Extra content</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/focusing-chamber-1/">Focusing chamber theoretical analysis 1</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/geometrized/">Geometrized units</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/h2-co2/">Hydrogen from CO2 production</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/integration-techniques/">Integration techniques</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/menu/">Menu (for mobile)</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/multivar/">Multivariable calculus guide</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/stages/">Project development stages</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/app-plans/">Project Elara app plans</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/library-plans/">Project Elara library plans</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/outreach-plan/">Project Elara Outreach Plan</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/funny/">Project humour and jokes</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/project-philosophy/">Project Philosophy</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/eval-christoffels/">Quickly evaluating the Christoffel symbols</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/relativity-hub/">Relativity Hub</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/future-extensions/">Speculative future extensions</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/standard-notation/">Standardized calculus notation</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/handbook-addthings/">Things to add to Elara Handbook</a></li>
+    	 
+    	 	<li><a href="https://elaraproject.github.io/elara-hub/visualization-outreach/">Visualization-based outreach</a></li>
+    	 
+    	</ul>
+    </nav>
+
+    <main>
+    	<article>
+	    
+	<h1>All about partial differential equations</h1>
+	<!--eventually add in authors-->
+	<p>A <strong>partial differential equation</strong> or PDE is any equation that contains a function and its partial derivatives. The general form of a PDE is:</p>
+<p>$$
+F \left(x, y, \dots, f(x, y), \dots\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \dots \frac{\partial^n f}{\partial x^n}, \frac{\partial^n f}{\partial y^n} \dots \right) = G(x, y, \dots)
+$$
+To shorten derivatives, we often use the $\nabla$ symbol, where:</p>
+<p>$$
+\nabla^2 u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}
+$$</p>
+<p>Some specific examples of PDEs include the heat equation:</p>
+<p>$$
+\frac{\partial u}{\partial t} = \alpha^2 \nabla^2 u
+$$
+The wave equation:</p>
+<p>$$
+\frac{\partial^2 u}{\partial t^2} = c^2 \nabla^2 u
+$$
+And Poisson's equation:</p>
+<p>$$
+\nabla^2 u = f
+$$
+PDEs can have many, many solutions. For instance, take the PDE:</p>
+<p>$$
+\frac{\partial^2 u}{\partial x^2} = 0
+$$</p>
+<p>The general solution of this PDE is $u(x, y) = xf(y) + g(y)$. And yes, those can be any functions of $y$, whether they be $e^y$ or $y \sin(y)$ or $y + 3y - \sqrt{y}$. Thus, just like ODEs need initial conditions to give unique solutions, PDEs need <strong>boundary conditions</strong> to give unique solutions. The typical set of boundary conditions for a PDE are values at the edges of the domain of the PDE (e.g. $u(x, t) \to 0$ as $x \to \pm \infty$). When the PDE is dependent on time, then the boundary condition for $t \to 0$ is often called an initial condition - remember, for PDEs, initial conditions are considered a type of boundary condition.</p>
+<h2 id="numerically-solving-pdes">Numerically solving PDEs</h2>
+<p>The most common methods of solving PDEs numerically are the finite difference, finite element, and boundary element methods.</p>
+<p>Encode derivatives as matrices - take wave equation as example. We have:</p>
+<p>$$
+\frac{\partial^2 u}{\partial t^2} = c^2\frac{\partial^2 u}{\partial x^2}
+$$</p>
+<p>We want to discretize the second partial derivative. Recall that:</p>
+<p>$$
+\frac{\partial^2 u}{\partial x^2} \approx \frac{u(x - h, t) + 2u(x, t) + u(x + h)}{h^2}
+$$</p>
+<p>Or, alternatively written:</p>
+<p>$$
+\frac{\partial^2 u}{\partial x^2} \approx \frac{u_{i - 1, j} + 2u_{i, j} + u_{i + 1, j}}{h^2}
+$$</p>
+<p>This works in all cases except at the left and right boundaries of the domain, as there is not another point to the left of the boundary to take the central difference. Instead, we use the single-sided difference - for the left, we have:</p>
+<p>$$
+\frac{2u_{i, j} - 5u_{i+ 1, j} + 4u_{i + 2, j} - u_{i+3, j}}{h^2}
+$$
+And for the right, we have:</p>
+<p>$$
+\frac{-u_{i-3, j} + 4u_{i - 2, j} - 5u_{i - 1, j} + 2u_{i, j}}{h^2}
+$$</p>
+<p>Note: see <a href="https://web.media.mit.edu/~crtaylor/calculator.html">https://web.media.mit.edu/~crtaylor/calculator.html</a> for a calculator for these values (enter <code>0, 1, 2, 3</code> for the left-handed 2nd derivative and <code>-3, -2, -1, 0</code> for the right-handed 2nd derivative).</p>
+<p>Now, partial derivatives are linear operators, just like matrices. So we can spatially discretize the equation by turning the 2nd spatial partial derivative into a matrix $A$ acting on the solution vector $U$:</p>
+<p>$$
+\frac{\partial^2 u}{\partial x^2} = AU
+$$
+Where:</p>
+<p>$$
+AU=\begin{bmatrix}
+2 &amp; -5 &amp; 4 &amp; -1 &amp; &amp; &amp; \\
+1 &amp; -2 &amp; 1 &amp; &amp; &amp; \\
+&amp; 1 &amp; -2 &amp; 1 &amp; &amp; &amp; \\
+&amp; &amp; \ddots &amp; \ddots &amp; \ddots &amp; \\
+&amp; &amp; &amp; 1 &amp; -2 &amp; 1 &amp; \\
+&amp; &amp; -1 &amp; 4 &amp; -5 &amp; 2
+\end{bmatrix}
+\begin{bmatrix}
+u_{1, 1} \\
+u_{1, 2} \\
+\vdots \\
+u_{1, n - 1} \\
+u_{1, n} \\
+u_{2, 1} \\
+\vdots \\
+u_{m, n}
+\end{bmatrix}
+= \begin{bmatrix}
+2u_{1, 1} -5 u_{1, 2} + 4 u_{1, 3} - u_{1, 4} \\
+u_{1, 3} - 2u_{1, 2} + u_{1, 1} \\
+u_{1, 4} - 2u_{1, 3} + u_{1, 2} \\
+\vdots \
+u_{i, 1} - 5u_{i, 2} + 4u_{i, 3} - u_{i, 4} \\
+u_{i, 3} - 2u_{i, 2} + u_{i, 1} \\
+\vdots \
+u_{i, n} - 2u_{i, n - 1} + u_{i, n - 1} \\
+-u_{i, n - 3} + 4u_{i, n - 2} -5u_{i, n - 1} + 2u_{i, n}
+\end{bmatrix}
+$$</p>
+<p>By discretizing the spatial derivative, the partial time derivative simply becomes an ordinary time derivative. Thus we can rewrite as:</p>
+<p>$$
+U'' = c^2 AU
+$$
+Which is an ordinary differential equation that can be solved with conventional ODE solvers. The only thing left is to compute an initial condition $U_0(x)$ and $U_0'(x)$ (if you know the initial condition you can differentiate it to get the initial time derivative).</p>
+<p>This method works well even in the higher-dimensional case. For instance, consider the generalized wave equation:</p>
+<p>$$
+\frac{\partial^2 u}{\partial t^2} = c^2 \nabla^2 u
+$$
+By encoding the Laplacian $\nabla^2 u$ as a matrix $A$ acting on $U$, the same approach can be used as with the other approaches previously mentioned. In fact, this approach works for all linear partial differential equations that have one time and one or several space derivatives.</p>
+<p>For other cases of linear PDEs that are not time-based, such as Poisson's or Laplace's equation, they can be generally written in the form:</p>
+<p>$$
+AU = B
+$$
+And solved using standard linear algebra techniques.</p>
+<p>Finally, for nonlinear PDEs, they can be generally written in the form:</p>
+<p>$$
+AU - f(U) = 0
+$$</p>
+<p>Which is a rootfinding problem that can be solved with Newton's method:</p>
+<p>$$
+U_{i + 1} = U_{i} - J^{-1}U(x_0)
+$$</p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://www.diva-portal.org/smash/get/diva2:1438836/FULLTEXT01.pdf">https://www.diva-portal.org/smash/get/diva2:1438836/FULLTEXT01.pdf</a></li>
+<li><a href="https://youtu.be/hxGA1Je1P-s">https://youtu.be/hxGA1Je1P-s</a></li>
+<li><a href="https://github.com/lukepolson/youtube_channel/blob/main/Python%20GPU/schrodinger.ipynb">https://github.com/lukepolson/youtube_channel/blob/main/Python%20GPU/schrodinger.ipynb</a></li>
+<li><a href="https://gist.github.com/c0rychu/6fc08cf5cdec2cc78a1f9334d103a869#file-schrodingereq_1d_tutorial-ipynb">https://gist.github.com/c0rychu/6fc08cf5cdec2cc78a1f9334d103a869#file-schrodingereq_1d_tutorial-ipynb</a></li>
+<li><a href="https://mathematica.stackexchange.com/questions/221207/finite-difference-method-for-1d-wave-equation">https://mathematica.stackexchange.com/questions/221207/finite-difference-method-for-1d-wave-equation</a></li>
+<li><a href="https://nextjournal.com/sosiris-de/pde-2018">https://nextjournal.com/sosiris-de/pde-2018</a></li>
+<li><a href="https://empossible.net/wp-content/uploads/2019/08/Lecture-4a-Finite-Difference-Method.pdf">https://empossible.net/wp-content/uploads/2019/08/Lecture-4a-Finite-Difference-Method.pdf</a></li>
+<li><a href="https://aquaulb.github.io/book_solving_pde_mooc/solving_pde_mooc/notebooks/01_Introduction/01_00_Preface.html">https://aquaulb.github.io/book_solving_pde_mooc/solving_pde_mooc/notebooks/01_Introduction/01_00_Preface.html</a></li>
+</ul>
+<h2 id="elara-math-integration">Elara-math integration</h2>
+<p>In the future, the differential equation solver RK4 will be ported from <code>elara-array</code> to <code>elara-math</code>. <code>elara-math</code> will then have two differential equations solver classes - <code>odesolve</code>, which solves (singular or systems of) ordinary differential equations, and <code>pdesolve</code> for (singular or systems of) partial differential equations. Its API is to be inspired by Mathematica's <code>ndsolve</code> - see https://reference.wolfram.com/language/ref/NDSolve.html</p>
+<p>The proposed numerical API:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>h = </span><span style="color:#d08770;">0.1
+</span><span>n = </span><span style="color:#d08770;">100
+</span><span>c = </span><span style="color:#d08770;">1
+</span><span>
+</span><span style="color:#65737e;"># Auto-compute sparse matrix
+</span><span style="color:#65737e;"># for ∂2u/∂x^2
+</span><span style="color:#65737e;"># with 2nd-order approximation to second-order derivative
+</span><span>diff_x = </span><span style="color:#bf616a;">CentralDifference</span><span>(</span><span style="color:#d08770;">2</span><span>, </span><span style="color:#bf616a;">order</span><span>=</span><span style="color:#d08770;">2</span><span>, </span><span style="color:#bf616a;">step_size</span><span>=h, </span><span style="color:#bf616a;">grid_size</span><span>=n)
+</span><span>
+</span><span style="color:#65737e;"># Solve as ODE, etc. etc.
+</span><span style="color:#65737e;"># ... 
+</span></code></pre>
+<p>The proposed symbolic API:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">pde</span><span>(</span><span style="color:#bf616a;">c</span><span>=</span><span style="color:#d08770;">1</span><span>):
+</span><span>	</span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">D</span><span>(</span><span style="color:#bf616a;">D</span><span>(u, t), t) - c ** </span><span style="color:#d08770;">2 </span><span>* </span><span style="color:#bf616a;">D</span><span>(</span><span style="color:#bf616a;">D</span><span>(u, x), x)
+</span><span>
+</span><span>solver = </span><span style="color:#bf616a;">PDEsolve</span><span>(pde, </span><span style="color:#bf616a;">bc</span><span>=&quot;</span><span style="color:#a3be8c;">Dirichlet</span><span>&quot;)
+</span><span>u = solver.</span><span style="color:#bf616a;">compute</span><span>(</span><span style="color:#bf616a;">grid</span><span>=&quot;</span><span style="color:#a3be8c;">disk</span><span>&quot;)
+</span><span>
+</span><span>plt.</span><span style="color:#bf616a;">title</span><span>(&quot;</span><span style="color:#a3be8c;">Wave equation results</span><span>&quot;)
+</span><span>plt.</span><span style="color:#bf616a;">imshow</span><span>(u)
+</span><span>plt.</span><span style="color:#bf616a;">show</span><span>()
+</span></code></pre>
+<h2 id="solving-vector-differential-equations">Solving vector differential equations</h2>
+<p>To solve vector differential equations, it is necessary to break up the vector differential equation into its components, and then solve for each of the components. For example, the first two of Maxwell's equations result in 2 trivial equations. The second two are more complex, as the curl of a vector field produces another vector field. Thus, we must instead rewrite the curl component-by-component. The complete equations are:</p>
+<p>$$
+\frac{\partial E_x}{\partial x} + \frac{\partial E_y}{\partial y} + \frac{\partial E_z}{\partial z} = \frac{\rho}{\epsilon_0}
+$$
+$$
+\frac{\partial B_x}{\partial x} + \frac{\partial B_y}{\partial y} + \frac{\partial B_z}{\partial z} = 0
+$$
+$$
+\frac{\partial E_z}{\partial y} - \frac{\partial E_y}{\partial z} = -\frac{\partial B_x}{\partial t}
+$$
+$$
+\frac{\partial E_x}{\partial z} - \frac{\partial E_z}{\partial x} = -\frac{\partial B_y}{\partial t}
+$$
+$$
+\frac{\partial E_y}{\partial x} - \frac{\partial E_x}{\partial y} = -\frac{\partial B_z}{\partial t}
+$$
+$$
+\frac{\partial B_z}{\partial y} - \frac{\partial B_y}{\partial z} = \mu_0 \left(J_x + \epsilon_0 \frac{\partial E_x}{\partial t}\right)
+$$
+$$
+\frac{\partial B_x}{\partial z} - \frac{\partial B_z}{\partial x} = \mu_0 \left(J_y + \epsilon_0 \frac{\partial E_y}{\partial t}\right)
+$$
+$$
+\frac{\partial B_y}{\partial x} - \frac{\partial B_x}{\partial y} =\mu_0 \left(J_z + \epsilon_0 \frac{\partial E_z}{\partial t}\right)
+$$</p>
+<p>So Maxwell's equations result in 8 coupled PDEs. However, only 6 of them are independent - any system that satisfies the last 6 PDEs also must satisfy the first 2, so long as the boundary conditions satisfy the conservation of charge.</p>
+<p>Here, note that for a solution, the current density must be set, which consists of one function each for $J_x, J_y, J_z$.</p>
+<h2 id="common-pdes">Common PDEs</h2>
+<p>Wave equation:</p>
+<p>$$
+\frac{\partial^2 u}{\partial t^2} = c^2 \nabla^2 u
+$$</p>
+<p>Heat/diffusion equation:</p>
+<p>$$
+\frac{\partial T}{\partial t} = \alpha^2 \nabla^2 T
+$$</p>
+<p>Laplace's equation:</p>
+<p>$$
+\nabla^2 u = 0
+$$
+Poisson's equation:</p>
+<p>$$
+\nabla^2 u = f(u)
+$$</p>
+<p>Burger's equation:</p>
+<p>$$
+\frac{\partial u}{\partial t} + c \frac{\partial u}{\partial x} = \nu \frac{\partial^2 u}{\partial x^2}
+$$</p>
+<p>Continuity equation:</p>
+<p>$$
+\frac{\partial \rho}{\partial t} + \nabla \cdot u = 0
+$$</p>
+<p>Navier-Stokes:</p>
+<p>$$
+\nabla \cdot u = 0
+$$
+$$
+\rho \left(\frac{\partial u}{\partial t} + (u \cdot \nabla) u\right) = -\nabla p + \mu \nabla^2 u + \rho g
+$$
+Maxwell's equations:</p>
+<p>$$
+\nabla \cdot E = \frac{\rho}{\epsilon_0}
+$$
+$$
+\nabla \cdot B = 0
+$$
+$$
+\nabla \times E = -\frac{\partial B}{\partial t}
+$$
+$$
+\nabla \times B = \mu_0 \left(J + \epsilon_0 \frac{\partial E}{\partial t}\right)
+$$
+Einstein's field equations:</p>
+<p>$$
+G_{\mu \nu} = \frac{8\pi G}{c^4} T_{\mu \nu}
+$$</p>
+<p>Equations of quantum mechanics:</p>
+<ul>
+<li>Schrödinger equation</li>
+<li>Pauli equation</li>
+<li>Klein-Gordon equation</li>
+<li>Dirac equation</li>
+</ul>
+<p>Euler-Lagrange equations, Hamilton's equations</p>
+<p>Black-Scholes equation</p>
+
+
+	    </article>
+    </main>
+
+    <script>
+    // Necessary until pulldown-cmark (which Zola depends on)
+    // auto-appends a .tasklist class to all list items
+    // that contain task lists
+    document.querySelectorAll("input[type='checkbox']").forEach((el) => el.parentElement.classList.add("tasklist"));
+    </script>
+
+    <script defer src="https://elaraproject.github.io/elara-hub/katex/katex.min.js"></script>
+    <script defer src="https://elaraproject.github.io/elara-hub/katex/contrib/auto-render.min.js"></script>
+
+    <script>
+    	// Loading KaTeX
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+              // customised options
+              // • auto-render specific keys, e.g.:
+              delimiters: [
+                  {left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  {left: '\\(', right: '\\)', display: false},
+                  {left: '\\[', right: '\\]', display: true}
+              ],
+              // • rendering keys, e.g.:
+              throwOnError : false
+            });
+        });
+    </script>
+</body>
+</html>
