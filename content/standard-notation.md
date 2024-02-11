@@ -28,81 +28,22 @@ Divergence: $\nabla \cdot \mathbf{F}$
 
 Curl: $\nabla \times \mathbf{F}$
 
-Indefinite integral/antiderivative:
+Note: for all multivariable integrals, the precise subscript of the integral, whether $C$ or $\Omega$ or $M$ or $\Sigma$, isn't really that important. A subscript should be placed but should also be elaborated on in the text describing the integral. It is the integrating differential that is most important.
 
-$$
-\int f(x) dx
-$$
-
-Definite integral:
-
-$$
-\int_a^b f(x) dx
-$$
-Line integral (scalar):
-
-$$
-\int_C f(x, y, z) d\ell
-$$
-Closed line integral (scalar):
-
-$$
-\oint_C f(x, y, z) d\ell
-$$
-
-Line integral (vector):
-
-$$
-\int_C \mathbf{F} \cdot \mathbf{d\ell}
-$$
-Closed line integral (vector):
-
-$$
-\oint_C \mathbf{F} \cdot \mathbf{d\ell}
-$$
-
-Surface integral (scalar):
-
-$$
-\iint_\Sigma f(x, y, z) dS
-$$
-Closed surface integral (scalar):
-
-$$
-\oiint_\Sigma f(x, y, z){dS}
-$$
-
-Surface integral (vector):
-
-$$
-\iint_\Sigma \mathbf{F} \cdot \mathbf{dS}
-$$
-
-Closed surface integral (vector):
-
-$$
-\oiint_\Sigma \mathbf{F} \cdot \mathbf{dS}
-$$
-
-Double integral:
-
-$$
-\iint_R f(x, y) dA
-$$
-Area integral:
-
-$$
-\iint_M dA
-$$
-
-Triple integral:
-
-$$
-\iiint_\Omega f(x, y, z) dV
-$$
-
-Volume integral:
-
-$$
-\iiint_E dV
-$$
+| Integral type | Symbol | Alternative notation |
+|-------|------|----|
+| Indefinite integral | $\displaystyle \int_0^x f(k)~dk$ | Integral without bounds (but not recommended) |
+| Definite integral | $\displaystyle \int_a^b f(x) dx$ | Limits can be placed directly on integral sign |
+| Line integral (scalar) | $\displaystyle \int_C f(x, y, z) d\ell$ | Yes, use $dr$ or $ds$ as differential |
+| Closed line integral (scalar) | $\displaystyle \oint_C f(x, y, z) d\ell$ | Yes, use $dr$ or $ds$ as differential |
+| Line integral (vector) | $\displaystyle \int_C \mathbf{F} \cdot \mathbf{d\ell}$ | Yes, use $\mathbf{dr}$ or $\mathbf{ds}$ as differential |
+| Closed line integral (vector) | $\displaystyle \oint_C \mathbf{F} \cdot \mathbf{d\ell}$ | Yes, use $\mathbf{dr}$ or $\mathbf{ds}$ as differential |
+| Surface integral (scalar) | $\displaystyle \iint_\Sigma f(x, y, z)~dS$ | Yes, $\displaystyle \int_\Sigma f(x, y, z)~dS$ |
+| Closed surface integral (scalar) | $\displaystyle \oiint_\Sigma f(x, y, z)~dS$ | Yes, $\displaystyle \oint_\Sigma f(x, y, z)~dS$ |
+| Surface integral (vector) | $\displaystyle \iint_\Sigma \mathbf{F} \cdot \mathbf{dS}$ | Yes, $\displaystyle \int_\Sigma \mathbf{F} \cdot \mathbf{dS}$ |
+| Closed surface integral (vector) | $\displaystyle \oiint_\Sigma \mathbf{F} \cdot \mathbf{dS}$ | Yes, $\displaystyle \oint_\Sigma \mathbf{F} \cdot \mathbf{dS}$ |
+| Double integral | $\displaystyle \iint_R f(x, y)~dA$ | Not recommended |
+| Area integral | $\displaystyle \iint_R dA$ | Not recommended |
+| Triple integral | $\displaystyle \iiint_\Omega f(x, y, z)~dV$ | Not recommended |
+| Volume integral | $\displaystyle \iiint_\Omega dV$ | Not recommended |
+| Spacetime integral | $\displaystyle \int_{M} \sqrt{-g}~d^4 x$ | None |
